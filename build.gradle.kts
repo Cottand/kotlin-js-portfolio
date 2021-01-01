@@ -8,32 +8,44 @@ version = "0.1"
 repositories {
     jcenter()
     mavenCentral()
-    maven { url = uri("https://dl.bintray.com/kotlin/kotlin-js-wrappers") }
+    maven("https://dl.bintray.com/kotlin/kotlin-js-wrappers")
 }
 
+val kotlinJsVersion = "pre.134-kotlin-1.4.10"
+
 dependencies {
+    val reactVersion = "17.0.0"
+    val kotlinStyledVersion = "5.2.0"
     testImplementation(kotlin("test-js"))
-    implementation("org.jetbrains:kotlin-react:16.13.1-pre.113-kotlin-1.4.0")
-    implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.113-kotlin-1.4.0")
-    implementation("org.jetbrains:kotlin-styled:1.0.0-pre.113-kotlin-1.4.0")
+    implementation("org.jetbrains:kotlin-react:$reactVersion-$kotlinJsVersion")
+    implementation("org.jetbrains:kotlin-react-dom:$reactVersion-$kotlinJsVersion")
+    implementation("org.jetbrains:kotlin-styled:$kotlinStyledVersion-$kotlinJsVersion")
+    implementation(npm("react-hot-loader", "^4.12.20"))
+    implementation("com.ccfraser.muirwik:muirwik-components:0.6.2")
 }
 
 kotlin {
-    js(IR) {
+    js(LEGACY) {
+        compilations.all {
+            kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.js.ExperimentalJsExport"
+        }
         browser {
-            binaries.executable()
-            webpackTask {
-                cssSupport.enabled = true
-            }
-            runTask {
+            commonWebpackConfig {
                 cssSupport.enabled = true
             }
             testTask {
                 useKarma {
-                    useChromeHeadless()
+                    if (isChromiumInstalled()) useChromiumHeadless() else useChromeHeadless()
                     webpackConfig.cssSupport.enabled = true
                 }
             }
+            binaries.executable()
         }
     }
 }
+
+
+fun isChromiumInstalled() = ProcessBuilder("sh", "-c", "chromium --help")
+    .directory(file("."))
+    .start()
+    .waitFor() == 0

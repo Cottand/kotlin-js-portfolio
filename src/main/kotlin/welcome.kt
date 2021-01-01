@@ -1,3 +1,5 @@
+import kotlinx.css.address
+import kotlinx.css.h2
 import kotlinx.html.InputType
 import kotlinx.html.js.onChangeFunction
 import org.w3c.dom.HTMLInputElement
@@ -5,6 +7,12 @@ import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
+import react.dom.div
+import react.dom.h1
+import react.dom.h2
+import react.dom.h3
+import react.dom.img
+import react.dom.source
 import styled.css
 import styled.styledDiv
 import styled.styledInput
@@ -27,6 +35,10 @@ class Welcome(props: WelcomeProps) : RComponent<WelcomeProps, WelcomeState>(prop
             css {
                 +WelcomeStyles.textContainer
             }
+            h1 {
+                 +"Welp hot reload does work I guess"
+            }
+
             +"Hello, ${state.name}"
         }
         styledInput {

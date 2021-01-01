@@ -1,0 +1,32 @@
+{
+  "main": "kotlin/kotlin-js-portfolio.js",
+  "devDependencies": {
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "source-map-loader": "1.0.1",
+    "webpack-dev-server": "3.11.0",
+    "css-loader": "4.2.1",
+    "style-loader": "1.2.1",
+    "dukat": "0.5.8-rc.3"
+  },
+  "dependencies": {
+    "react-hot-loader": "^4.12.20",
+    "kotlin": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin/1.4.21",
+    "kotlin-wrappers-kotlin-react-jsLegacy": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin-wrappers-kotlin-react-jsLegacy/1.0.0-SNAPSHOT",
+    "kotlin-wrappers-kotlin-extensions-jsLegacy": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin-wrappers-kotlin-extensions-jsLegacy/1.0.1-pre.134-kotlin-1.4.10",
+    "kotlinx-coroutines-core": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlinx-coroutines-core/1.4.2",
+    "kotlinx-atomicfu": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlinx-atomicfu/0.14.4",
+    "kotlin-wrappers-kotlin-react-dom-jsLegacy": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin-wrappers-kotlin-react-dom-jsLegacy/1.0.0-SNAPSHOT",
+    "kotlinx-html-js": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlinx-html-js/0.7.2",
+    "kotlin-wrappers-kotlin-styled-jsLegacy": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin-wrappers-kotlin-styled-jsLegacy/1.0.0-SNAPSHOT",
+    "kotlin-css": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin-css/1.0.0-pre.134-kotlin-1.4.10",
+    "muirwik-muirwik-components": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/muirwik-muirwik-components/0.6.2",
+    "kotlin-test-js-runner": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin-test-js-runner/1.4.21",
+    "kotlin-test": "file:/home/cottand/dev/kotlin-js-portfolio/build/js/packages_imported/kotlin-test/1.4.21"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "name": "kotlin-js-portfolio",
+  "version": "0.1.0"
+}

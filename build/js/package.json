@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/kotlin-js-portfolio"
+  ],
+  "resolutions": {},
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "name": "kotlin-js-portfolio",
+  "version": "0.1"
+}

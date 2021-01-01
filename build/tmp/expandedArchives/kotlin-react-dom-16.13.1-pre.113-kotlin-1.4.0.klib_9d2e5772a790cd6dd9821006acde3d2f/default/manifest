@@ -1,0 +1,7 @@
+builtins_platform=JS
+unique_name=org.jetbrains\:kotlin-react-dom
+compiler_version=1.4.0
+depends=org.jetbrains\:kotlin-react org.jetbrains\:kotlin-extensions org.jetbrains.kotlinx\:kotlinx-html org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu kotlin
+abi_version=1.4.1
+metadata_version=1.4.0
+ir_version=1.0.0
