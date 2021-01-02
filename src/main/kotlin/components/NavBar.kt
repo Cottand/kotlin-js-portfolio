@@ -1,6 +1,9 @@
 package components
 
+import com.ccfraser.muirwik.components.MAppBarColor.transparent
 import com.ccfraser.muirwik.components.MAppBarPosition.static
+import com.ccfraser.muirwik.components.MTabIndicatorColor
+import com.ccfraser.muirwik.components.MTabTextColor.primary
 import com.ccfraser.muirwik.components.MTypographyVariant.h5
 import com.ccfraser.muirwik.components.button.mIconButton
 import com.ccfraser.muirwik.components.card.mCard
@@ -10,8 +13,10 @@ import com.ccfraser.muirwik.components.mAppBar
 import com.ccfraser.muirwik.components.mTab
 import com.ccfraser.muirwik.components.mTabs
 import com.ccfraser.muirwik.components.mTypography
+import com.ccfraser.muirwik.components.themeContext
 import com.ccfraser.muirwik.components.transitions.mCollapse
 import kotlinx.css.JustifyContent
+import kotlinx.css.boxShadow
 import kotlinx.css.justifyContent
 import kotlinx.css.padding
 import kotlinx.css.paddingLeft
@@ -33,8 +38,9 @@ import util.simpleLink
 
 val navBar by component<RProps> {
     var indexState by useState(0)
-    mAppBar(position = static) {
-        mTabs(value = indexState) {
+    mAppBar(position = static, color = transparent) {
+        css { boxShadow.clear() }
+        mTabs(value = indexState, textColor = primary, indicatorColor = MTabIndicatorColor.primary) {
             attrs {
                 centered = true
                 onChange = { _, newValue ->
@@ -48,6 +54,8 @@ val navBar by component<RProps> {
             mTab("item2") {
                 attrs.value = 1
             }
+        }
+        themeContext.Provider {
         }
     }
     child(tabPanel) {
