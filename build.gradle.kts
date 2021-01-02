@@ -1,5 +1,6 @@
 plugins {
     kotlin("js") version "1.4.21"
+    id("org.jlleitschuh.gradle.ktlint") version "9.4.1"
 }
 
 group = "org"
@@ -31,6 +32,7 @@ kotlin {
         }
         browser {
             commonWebpackConfig {
+                sourceMaps = true
                 cssSupport.enabled = true
             }
             testTask {
@@ -44,8 +46,17 @@ kotlin {
     }
 }
 
+ktlint {
+//    disabledRules += "no-wildcard-imports"
+}
+
+val format by tasks.registering {
+    dependsOn(tasks.ktlintFormat)
+}
 
 fun isChromiumInstalled() = ProcessBuilder("sh", "-c", "chromium --help")
     .directory(file("."))
     .start()
     .waitFor() == 0
+
+operator fun <T : Any> SetProperty<T>.plusAssign(elem: T) { add(elem) }

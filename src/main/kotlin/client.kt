@@ -1,9 +1,11 @@
+@file:Suppress("UnsafeCastFromDynamic")
+
 import com.ccfraser.muirwik.components.mThemeProvider
 import com.ccfraser.muirwik.components.styles.mStylesProvider
-import react.dom.render
+import components.app
 import kotlinx.browser.document
-import components.App
-import react.RBuilder
+import react.child
+import react.dom.render
 
 @JsModule("react-hot-loader")
 @JsNonModule
@@ -16,9 +18,8 @@ fun main() {
     render(document.getElementById("root")) {
         mStylesProvider("jss-insertion-point") {
             mThemeProvider {
-                hotWrapper(app())
+                hotWrapper(child(app) {})
             }
         }
     }
 }
-fun RBuilder.app() = child(App::class) {}

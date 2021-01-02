@@ -1,0 +1,17 @@
+language: java
+
+cache: npm
+
+script: ./gradlew check
+
+before_deploy: ./gradlew assemble
+
+deploy:
+  provider: pages
+  local_dir: build/distributions
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  target_branch: pages
+  on:
+    branch: master
