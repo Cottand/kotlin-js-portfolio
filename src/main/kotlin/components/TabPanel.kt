@@ -31,15 +31,3 @@ val tabPanel by component<TabPanelProps> { props ->
         if (isHidden.not()) +props.children
     }
 }
-
-fun <T> RDOMBuilder<T>.a11yProps(index: Int) where T : Tag, T : CommonAttributeGroupFacade =
-    attrs {
-        id = "simple-tab-$index"
-        set("aria-controls", "simple-tabpanel-$index")
-    }
-
-fun RBuilder.tabPanel(value: Int, index: Int, child: RBuilder.() -> Unit) = child(tabPanel) {
-    attrs.value = value
-    attrs.index = index
-    child()
-}
