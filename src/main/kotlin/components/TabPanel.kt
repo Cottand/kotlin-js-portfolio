@@ -1,15 +1,10 @@
 package components
 
-import kotlinx.html.CommonAttributeGroupFacade
-import kotlinx.html.Tag
 import kotlinx.html.hidden
 import kotlinx.html.id
 import kotlinx.html.role
 import react.Child
-import react.RBuilder
 import react.RProps
-import react.child
-import react.dom.RDOMBuilder
 import react.dom.div
 import util.component
 

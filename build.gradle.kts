@@ -12,11 +12,10 @@ repositories {
     maven("https://dl.bintray.com/kotlin/kotlin-js-wrappers")
 }
 
-val kotlinJsVersion = "pre.134-kotlin-1.4.10"
-
 dependencies {
     val reactVersion = "17.0.0"
     val kotlinStyledVersion = "5.2.0"
+    val kotlinJsVersion = "pre.130-kotlin-1.4.21"
     testImplementation(kotlin("test-js"))
     implementation("org.jetbrains:kotlin-react:$reactVersion-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-react-dom:$reactVersion-$kotlinJsVersion")
@@ -27,9 +26,6 @@ dependencies {
 
 kotlin {
     js(LEGACY) {
-        compilations.all {
-            kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.js.ExperimentalJsExport"
-        }
         browser {
             commonWebpackConfig {
                 sourceMaps = true
@@ -38,7 +34,6 @@ kotlin {
             testTask {
                 useKarma {
                     if (isChromiumInstalled()) useChromiumHeadless() else useChromeHeadless()
-                    webpackConfig.cssSupport.enabled = true
                 }
             }
             binaries.executable()

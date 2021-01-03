@@ -103,7 +103,7 @@ val themeOptions1 = js(
     "divider": "rgba(255, 255, 255, 0.12)",
     "background": {
       "paper": "#424242",
-      "default": "#121212",
+//      "default": "#121212",
       "level2": "#333",
       "level1": "#212121"
     },
@@ -285,4 +285,6 @@ val themeOptions1 = js(
   }
 }
 )"""
-).unsafeCast<ThemeOptions>()
+).unsafeCast<ThemeOptions>().apply {
+    palette.asDynamic().background.default = "#121212"
+}

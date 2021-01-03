@@ -9,7 +9,7 @@ import react.functionalComponent
 import styled.css
 import styled.styledDiv
 
-val app = functionalComponent<RProps> { props ->
+val app = functionalComponent<RProps> {
     mCssBaseline()
 
     styledDiv {
