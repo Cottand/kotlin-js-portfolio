@@ -38,7 +38,7 @@ val navBar by component<RProps> {
     }
     child(tabPanel) {
         attrs { value = indexState; index = 0 }
-        child(aboutMe)
+        child(about)
     }
     child(tabPanel) {
         attrs { value = indexState; index = 1 }
