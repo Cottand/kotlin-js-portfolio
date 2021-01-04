@@ -39,4 +39,3 @@ external interface CardWithImageProps : RProps {
     var tooltipPlacement: TooltipPlacement?
     var children: Child?
 }
-

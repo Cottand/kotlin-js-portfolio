@@ -5,12 +5,9 @@ import com.ccfraser.muirwik.components.mLink
 import com.ccfraser.muirwik.components.styles.Spacing
 import com.ccfraser.muirwik.components.styles.Theme
 import com.ccfraser.muirwik.components.themeContext
-import kotlinx.css.LinearDimension
-import kotlinx.css.StyledElement
 import kotlinx.css.px
 import react.FunctionalComponent
 import react.RBuilder
-import react.RContext
 import react.RProps
 import react.functionalComponent
 import kotlin.properties.ReadOnlyProperty

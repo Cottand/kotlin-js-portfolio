@@ -21,6 +21,7 @@ dependencies {
     implementation("org.jetbrains:kotlin-react-dom:$reactVersion-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-styled:$kotlinStyledVersion-$kotlinJsVersion")
     implementation(npm("react-hot-loader", "^4.12.20"))
+    implementation(npm("react-swipeable-views", "^0.13.9"))
     implementation("com.ccfraser.muirwik:muirwik-components:0.6.2")
 }
 
@@ -54,4 +55,6 @@ fun isChromiumInstalled() = ProcessBuilder("sh", "-c", "chromium --help")
     .start()
     .waitFor() == 0
 
-operator fun <T : Any> SetProperty<T>.plusAssign(elem: T) { add(elem) }
+operator fun <T : Any> SetProperty<T>.plusAssign(elem: T) {
+    add(elem)
+}

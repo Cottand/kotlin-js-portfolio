@@ -9,7 +9,7 @@ import kotlinx.css.marginRight
 import kotlinx.css.pct
 import styled.StyleSheet
 
-object ImageStyles : StyleSheet("ImageStyles") {
+object BaseStyle : StyleSheet("ImageStyles") {
     val centered by css {
         display = block
         marginLeft = auto

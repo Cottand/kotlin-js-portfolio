@@ -1,7 +1,6 @@
 package components
 
 import com.ccfraser.muirwik.components.MTypographyAlign.center
-import com.ccfraser.muirwik.components.MTypographyVariant.body1
 import com.ccfraser.muirwik.components.MTypographyVariant.body2
 import com.ccfraser.muirwik.components.mContainer
 import com.ccfraser.muirwik.components.mCssBaseline

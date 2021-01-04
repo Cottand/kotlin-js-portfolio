@@ -4,7 +4,7 @@ import com.ccfraser.muirwik.components.HRefOptions
 import com.ccfraser.muirwik.components.MGridAlignItems
 import com.ccfraser.muirwik.components.MGridDirection.column
 import com.ccfraser.muirwik.components.MGridJustify
-import com.ccfraser.muirwik.components.MGridSize.cells3
+import com.ccfraser.muirwik.components.MGridSize.cells4
 import com.ccfraser.muirwik.components.MGridSpacing.spacing0
 import com.ccfraser.muirwik.components.MTypographyAlign.center
 import com.ccfraser.muirwik.components.MTypographyVariant.body1
@@ -13,14 +13,12 @@ import com.ccfraser.muirwik.components.MTypographyVariant.subtitle1
 import com.ccfraser.muirwik.components.direction
 import com.ccfraser.muirwik.components.list.mList
 import com.ccfraser.muirwik.components.list.mListItemWithIcon
+import com.ccfraser.muirwik.components.mContainer
 import com.ccfraser.muirwik.components.mGridContainer
 import com.ccfraser.muirwik.components.mGridItem
 import com.ccfraser.muirwik.components.mLink
-import com.ccfraser.muirwik.components.mPaper
 import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
-import kotlinx.css.Color
-import kotlinx.css.backgroundColor
 import kotlinx.css.height
 import kotlinx.css.padding
 import kotlinx.css.pct
@@ -29,8 +27,7 @@ import react.RBuilder
 import react.RProps
 import react.child
 import react.dom.br
-import react.useState
-import style.ImageStyles
+import style.BaseStyle
 import styled.css
 import styled.styledDiv
 import styled.styledImg
@@ -43,19 +40,15 @@ val about by component<RProps> {
     }
 }
 
-
 val aboutHeader by component<RProps> {
-    mPaper {
-        css {
-            backgroundColor = Color.transparent
-        }
+    mContainer {
 
         styledImg(src = "/profileJuneCropped.jpg") {
             css {
                 width = 36.spacingUnits
                 height = 36.spacingUnits
                 padding = 4.spacingUnits.value
-                with(ImageStyles) {
+                with(BaseStyle) {
                     +centered
                     +round
                 }
@@ -77,24 +70,27 @@ val aboutHeader by component<RProps> {
     }
 }
 
-fun RBuilder.contactList() = mGridContainer(spacing0, alignItems = MGridAlignItems.center, justify = MGridJustify.center) {
-    attrs.direction = column
-    mGridItem(cells3) {
-        mList(component = "nav") {
-            mListItemWithIcon(
-                "linkedin",
-                "linkedin.com/in/ndcotta",
-                hRefOptions = HRefOptions("https://linkedin.com/in/ndcotta")
-            )
-            mListItemWithIcon(
-                "email",
-                "ndcotta@blockchain.com",
-                hRefOptions = HRefOptions("mailto:ndcotta@blockchain.com")
-            )
-            mListItemWithIcon(
-                "code", "github.com/cottand", hRefOptions = HRefOptions("https://github.com/cottand")
-            )
+fun RBuilder.contactList() =
+    mGridContainer(spacing0, alignItems = MGridAlignItems.center, justify = MGridJustify.center) {
+        attrs.direction = column
+        mGridItem(cells4) {
+            mList(component = "nav") {
+                mListItemWithIcon(
+                    "linkedin",
+                    "linkedin.com/in/ndcotta",
+                    hRefOptions = HRefOptions("https://linkedin.com/in/ndcotta")
+                )
+                mListItemWithIcon(
+                    "email",
+                    "ndcotta@blockchain.com",
+                    hRefOptions = HRefOptions("mailto:ndcotta@blockchain.com")
+                )
+                mListItemWithIcon(
+                    "code",
+                    "github.com/cottand",
+                    hRefOptions = HRefOptions("https://github.com/cottand"),
+                    divider = false
+                )
+            }
         }
     }
-}
-
