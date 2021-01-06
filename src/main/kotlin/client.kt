@@ -15,12 +15,16 @@ private external val hotModule: dynamic
 private val hot = hotModule.hot
 private val module = js("module")
 
+object Settings {
+    val blogEnabled = false
+}
+
 fun main() {
     val hotWrapper = hot(module)
     render(document.getElementById("root")) {
         mStylesProvider("jss-insertion-point") {
             mThemeProvider(theme = createMuiTheme(themeOptions1)) {
-                hotWrapper(child(app) {})
+                hotWrapper(child(app))
             }
         }
     }

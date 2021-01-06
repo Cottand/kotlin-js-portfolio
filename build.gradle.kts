@@ -15,10 +15,11 @@ repositories {
 dependencies {
     val reactVersion = "17.0.0"
     val kotlinStyledVersion = "5.2.0"
-    val kotlinJsVersion = "pre.130-kotlin-1.4.21"
+    val kotlinJsVersion = "pre.134-kotlin-1.4.10"
     testImplementation(kotlin("test-js"))
     implementation("org.jetbrains:kotlin-react:$reactVersion-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-react-dom:$reactVersion-$kotlinJsVersion")
+    implementation("org.jetbrains:kotlin-react-router-dom:5.2.0-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-styled:$kotlinStyledVersion-$kotlinJsVersion")
     implementation(npm("react-hot-loader", "^4.12.20"))
     implementation(npm("react-swipeable-views", "^0.13.9"))
@@ -27,6 +28,10 @@ dependencies {
 
 kotlin {
     js(LEGACY) {
+        compilations.all {
+            kotlinOptions.sourceMap = true
+            kotlinOptions.sourceMapEmbedSources = "always"
+        }
         browser {
             commonWebpackConfig {
                 sourceMaps = true
