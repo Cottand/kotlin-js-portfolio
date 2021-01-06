@@ -34,7 +34,7 @@ val footer by component<RProps> {
             paddingTop = 3.spacingUnits
             marginTop = LinearDimension.auto
         }
-        mTypography("You can find the repo ", align = center, variant = body2, gutterBottom = true) {
+        mTypography(align = center, variant = body2, gutterBottom = true) {
             +"This website was made with Kotlin/JS + React. You can find the repo "
             mLink("here", hRef = "https://github.com/Cottand/kotlin-js-portfolio-template/")
             +"."
