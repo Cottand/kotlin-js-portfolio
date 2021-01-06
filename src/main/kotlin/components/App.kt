@@ -24,9 +24,7 @@ val app = functionalComponent<RProps> {
         css(FooterStyles.root) // this will keep the footer stuck to the bottom
         child(header)
         hashRouter(hashType = noslash) {
-            redirect(from=Routes.Root.path, to = Routes.About.path, exact = true)
             child(navBar)
-            redirect(to = Routes.About.path)
         }
         child(footer)
     }
@@ -35,7 +33,6 @@ val app = functionalComponent<RProps> {
 
 enum class Routes(val path: String) {
     About("/about"),
-    Resume("/resume"),
     Projects("/projects"),
     Blog("/blog"),
     Root("/");
@@ -46,7 +43,6 @@ enum class Routes(val path: String) {
 
     companion object {
         fun from(route: String) = when (route) {
-            "/resume" -> Resume
             "/projects" -> Projects
             "/blog" -> Blog
             else -> About
