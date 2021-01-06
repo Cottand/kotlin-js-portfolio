@@ -5,7 +5,6 @@ import com.ccfraser.muirwik.components.TooltipPlacement
 import com.ccfraser.muirwik.components.TooltipPlacement.leftEnd
 import com.ccfraser.muirwik.components.mTypography
 import kotlinx.css.FontWeight
-import kotlinx.css.FontWeight.Companion
 import kotlinx.css.fontFamily
 import kotlinx.css.fontWeight
 import kotlinx.css.letterSpacing

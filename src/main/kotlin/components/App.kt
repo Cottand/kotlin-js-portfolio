@@ -8,11 +8,8 @@ import react.RProps
 import react.ReactElement
 import react.child
 import react.functionalComponent
-import react.router.dom.HashType.hashbang
 import react.router.dom.HashType.noslash
-import react.router.dom.HashType.slash
 import react.router.dom.hashRouter
-import react.router.dom.redirect
 import react.router.dom.route
 import styled.css
 import styled.styledDiv
@@ -28,7 +25,6 @@ val app = functionalComponent<RProps> {
         }
         child(footer)
     }
-
 }
 
 enum class Routes(val path: String) {
@@ -39,7 +35,6 @@ enum class Routes(val path: String) {
 
     operator fun RBuilder.invoke(exact: Boolean = true, strict: Boolean = false, render: () -> ReactElement?) =
         route(path, exact, strict, render)
-
 
     companion object {
         fun from(route: String) = when (route) {
