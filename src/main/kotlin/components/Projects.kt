@@ -1,9 +1,7 @@
 package components
 
 import com.ccfraser.muirwik.components.MTypographyAlign.left
-import com.ccfraser.muirwik.components.MTypographyVariant.h2
 import com.ccfraser.muirwik.components.MTypographyVariant.h3
-import com.ccfraser.muirwik.components.MTypographyVariant.h6
 import com.ccfraser.muirwik.components.accordion.mAccordion
 import com.ccfraser.muirwik.components.accordion.mAccordionDetails
 import com.ccfraser.muirwik.components.accordion.mAccordionSummary
@@ -15,8 +13,6 @@ import kotlinx.css.Align.center
 import kotlinx.css.Color
 import kotlinx.css.Display.flex
 import kotlinx.css.FontWeight
-import kotlinx.css.LinearDimension
-import kotlinx.css.LinearDimension.Companion
 import kotlinx.css.alignItems
 import kotlinx.css.basis
 import kotlinx.css.br
@@ -25,10 +21,7 @@ import kotlinx.css.display
 import kotlinx.css.flexBasis
 import kotlinx.css.flexShrink
 import kotlinx.css.fontWeight
-import kotlinx.css.paddingBottom
-import kotlinx.css.paddingTop
 import kotlinx.css.pct
-import kotlinx.css.px
 import kotlinx.css.width
 import react.RBuilder
 import react.RProps

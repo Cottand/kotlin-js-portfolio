@@ -8,7 +8,6 @@ import kotlinx.css.FontWeight
 import kotlinx.css.fontFamily
 import kotlinx.css.fontWeight
 import kotlinx.css.letterSpacing
-import kotlinx.css.padding
 import kotlinx.css.paddingBottom
 import kotlinx.css.paddingLeft
 import kotlinx.css.paddingTop

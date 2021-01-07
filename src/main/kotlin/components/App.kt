@@ -23,7 +23,7 @@ val app = functionalComponent<RProps> {
         hashRouter(hashType = noslash) {
             child(navBar)
         }
-        if(Settings.useFooter) child(footer)
+        if (Settings.useFooter) child(footer)
     }
 }
 
