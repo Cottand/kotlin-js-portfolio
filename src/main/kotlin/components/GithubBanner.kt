@@ -10,9 +10,6 @@ import kotlinx.css.LinearDimension
 import kotlinx.css.Position.absolute
 import kotlinx.css.Position.relative
 import kotlinx.css.TextAlign.center
-import kotlinx.css.VerticalAlign
-import kotlinx.css.VerticalAlign.Companion
-import kotlinx.css.alignContent
 import kotlinx.css.float
 import kotlinx.css.height
 import kotlinx.css.lineHeight
@@ -21,7 +18,6 @@ import kotlinx.css.position
 import kotlinx.css.properties.lh
 import kotlinx.css.px
 import kotlinx.css.textAlign
-import kotlinx.css.verticalAlign
 import kotlinx.css.width
 import react.RBuilder
 import styled.css

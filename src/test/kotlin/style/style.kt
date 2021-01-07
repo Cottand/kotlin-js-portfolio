@@ -8,7 +8,7 @@ val themeOptions2 = js {
         keys = js("['xs', 'sm', 'md', 'lg', 'xl']")
     }
 }
-//fun jl(vararg: dynamic) =
+// fun jl(vararg: dynamic) =
 internal class StyleTest {
     @Test
     fun themePrint() {

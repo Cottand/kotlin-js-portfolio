@@ -92,8 +92,9 @@ val projects by component<RProps> {
 
         Ivann.entry("Web visual neural network builder", "icivann/ivann") {
             mTypography(paragraph = true) {
+                mLink("Ivann", "https://icivann.github.io/ivann")
                 +"""
-                    Ivann is an online visual network builder, written using Typescript and VueJS. It generates
+                     is an online visual network builder, written using Typescript and VueJS. It generates
                     python files that can then be run anywhere in order to train and evaluate models.
                 """.trimIndent()
             }
@@ -108,8 +109,6 @@ val projects by component<RProps> {
                 +"Hey PintOS"
             }
         }
-
-
     }
 }
 

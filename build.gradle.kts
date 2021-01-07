@@ -22,7 +22,7 @@ dependencies {
     implementation("org.jetbrains:kotlin-react-router-dom:5.2.0-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-styled:$kotlinStyledVersion-$kotlinJsVersion")
     implementation(npm("react-hot-loader", "^4.12.20"))
-    implementation(npm("async","^3.2.0"))
+    implementation(npm("async", "^3.2.0"))
     implementation(npm("react-swipeable-views", "^0.13.9"))
     implementation("com.ccfraser.muirwik:muirwik-components:0.6.2")
 }
