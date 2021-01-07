@@ -9,6 +9,9 @@ import kotlinx.css.fontFamily
 import kotlinx.css.fontWeight
 import kotlinx.css.letterSpacing
 import kotlinx.css.padding
+import kotlinx.css.paddingBottom
+import kotlinx.css.paddingLeft
+import kotlinx.css.paddingTop
 import kotlinx.css.px
 import react.Child
 import react.RProps
@@ -27,7 +30,10 @@ val header by component<RProps> {
             css {
                 letterSpacing = 1.px
                 fontWeight = FontWeight.bold
-                padding(14.px)
+//                padding(14.px)
+                paddingTop = 6.px
+                paddingLeft = 14.px
+                paddingBottom = 64.px
                 put("text-shadow", "1px 1px #5a5a5a")
                 fontFamily = "'Fira Code', monospace;"
             }
