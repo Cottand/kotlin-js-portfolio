@@ -11,6 +11,9 @@ import com.ccfraser.muirwik.components.MTypographyVariant.h5
 import com.ccfraser.muirwik.components.MTypographyVariant.subtitle1
 import com.ccfraser.muirwik.components.direction
 import com.ccfraser.muirwik.components.list.mList
+import com.ccfraser.muirwik.components.list.mListItem
+import com.ccfraser.muirwik.components.list.mListItemIcon
+import com.ccfraser.muirwik.components.list.mListItemText
 import com.ccfraser.muirwik.components.list.mListItemWithIcon
 import com.ccfraser.muirwik.components.mContainer
 import com.ccfraser.muirwik.components.mGridContainer
@@ -18,6 +21,7 @@ import com.ccfraser.muirwik.components.mGridItem
 import com.ccfraser.muirwik.components.mLink
 import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
+import external.githubIcon
 import kotlinx.css.height
 import kotlinx.css.padding
 import kotlinx.css.pct
@@ -84,11 +88,11 @@ fun RBuilder.contactList() =
                     "ndcotta@blockchain.com",
                     hRefOptions = HRefOptions("mailto:ndcotta@blockchain.com"),
                 )
-                mListItemWithIcon(
-                    "code",
-                    "github.com/cottand",
-                    hRefOptions = HRefOptions("https://github.com/cottand"),
-                )
+                mListItem(hRefOptions = HRefOptions("https://github.com/cottand"), divider = true, button = true) {
+                    attrs.component = "a"
+                    mListItemIcon { githubIcon() }
+                    mListItemText("github.com/cottand")
+                }
                 mListItemWithIcon(
                     "save_alt",
                     "download resume",

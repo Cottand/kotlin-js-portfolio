@@ -1,6 +1,7 @@
 package style
 
 import com.ccfraser.muirwik.components.styles.ThemeOptions
+import kotlinext.js.js
 
 val themeOptions1 = js(
     """(
@@ -40,12 +41,6 @@ val themeOptions1 = js(
       "dark": "rgb(100, 141, 174)",
       "contrastText": "rgba(0, 0, 0, 0.87)"
     },
-//    "secondary": {
-//      "main": "#f48fb1",
-//      "light": "rgb(246, 165, 192)",
-//      "dark": "rgb(170, 100, 123)",
-//      "contrastText": "rgba(0, 0, 0, 0.87)"
-//    },
     "secondary": {
       "main": "#651fff",
       "light": "#834bff",
@@ -102,7 +97,8 @@ val themeOptions1 = js(
     },
     "divider": "rgba(255, 255, 255, 0.12)",
     "background": {
-      "paper": "#424242",
+//      "paper": "#424242",
+      "paper": "#262626",
 //      "default": "#121212",
       "level2": "#333",
       "level1": "#212121"
