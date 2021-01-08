@@ -20,6 +20,10 @@ object Settings {
     const val useFooter = false
 }
 
+object Files {
+    val ivannTypeCheck = "/ivannLinearLayersCheck.png"
+}
+
 fun main() {
     val hotWrapper = hot(module)
     render(document.getElementById("root")) {

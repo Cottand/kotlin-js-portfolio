@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.internal.ensureParentDirsCreated
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
+import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
 
 plugins {
     kotlin("js") version "1.4.21"
@@ -14,6 +15,7 @@ repositories {
     jcenter()
     mavenCentral()
     maven("https://dl.bintray.com/kotlin/kotlin-js-wrappers")
+    maven("https://dl.bintray.com/jetbrains/markdown")
 }
 
 dependencies {
@@ -25,9 +27,13 @@ dependencies {
     implementation("org.jetbrains:kotlin-react-dom:$reactVersion-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-react-router-dom:5.2.0-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-styled:$kotlinStyledVersion-$kotlinJsVersion")
+//    implementation("org.jetbrains:markdown:0.2.0.pre-55")
     implementation(npm("react-hot-loader", "^4.12.20"))
     implementation(npm("async", "^3.2.0"))
     implementation(npm("react-swipeable-views", "^0.13.9"))
+//    implementation(npm("react", "^17.0.0"))
+    implementation(npm("markdown-to-jsx", "^7.1.0"))
+    implementation(npm("chokidar", "^3.5.0"))
     implementation("com.ccfraser.muirwik:muirwik-components:0.6.2")
 }
 
@@ -36,6 +42,7 @@ kotlin {
         compilations.all {
             kotlinOptions.sourceMap = true
             kotlinOptions.sourceMapEmbedSources = "always"
+            yarn
         }
         browser {
             commonWebpackConfig {

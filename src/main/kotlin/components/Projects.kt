@@ -9,7 +9,7 @@ import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
 import components.Panel.DJStreamr
 import components.Panel.Ivann
-import components.Panel.PintOS
+import components.Panel.Pintos
 import components.Panel.WACC
 import components.projectEntries.djStreamrEntry
 import components.projectEntries.ivannEntry
@@ -60,8 +60,8 @@ val projects by component<RProps> {
                     if (gh != null) {
                         githubBanner(gh)
                         br {}
-                        br {}
                     }
+                    css.width = 100.pct
                     details()
                 }
             }
@@ -72,7 +72,7 @@ val projects by component<RProps> {
         DJStreamr.entry("Full-stack collaborative live DJ software") { djStreamrEntry() }
         Ivann.entry("Web visual neural network builder", "icivann/ivann") { ivannEntry() }
         WACC.entry("Multiplatform compiler of a small language for ARM and the JVM", "cottand/wacc") { waccEntry() }
-        PintOS.entry("UNIX-like pint-sized OS", "cottand/pintos") { pintosEntry() }
+        Pintos.entry("UNIX-like pint-sized OS", "cottand/pintos") { pintosEntry() }
     }
 }
 
@@ -81,7 +81,7 @@ enum class Panel {
     DJStreamr,
     Ivann,
     WACC,
-    PintOS,
+    Pintos,
     KEEP213,
     Checkm8,
     ;
