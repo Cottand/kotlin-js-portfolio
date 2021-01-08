@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.internal.ensureParentDirsCreated
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
+
 plugins {
     kotlin("js") version "1.4.21"
     id("org.jlleitschuh.gradle.ktlint") version "9.4.1"
@@ -5,6 +8,7 @@ plugins {
 
 group = "org"
 version = "0.1"
+val customDomain = "nico.dcotta.eu"
 
 repositories {
     jcenter()
@@ -52,8 +56,23 @@ ktlint {
 //    disabledRules += "no-wildcard-imports"
 }
 
-val format by tasks.registering {
-    dependsOn(tasks.ktlintFormat)
+tasks {
+    val format by registering {
+        dependsOn(ktlintFormat)
+    }
+    val createCname by registering {
+        val webpackTask = named("browserProductionWebpack", KotlinWebpack::class)
+        mustRunAfter(webpackTask)
+        val webpackDir = webpackTask.get().destinationDirectory
+        doLast {
+            with(File("$webpackDir/CNAME")) {
+                ensureParentDirsCreated()
+                writeText(customDomain)
+            }
+        }
+    }
+
+    assemble { dependsOn(createCname) }
 }
 
 fun isChromiumInstalled() = ProcessBuilder("sh", "-c", "chromium --help")
