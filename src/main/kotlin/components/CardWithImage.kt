@@ -10,13 +10,14 @@ import kotlinx.css.backgroundSize
 import react.RBuilder
 import styled.css
 import util.component
+import util.path
 
 val cardWithImage by component<CardWithImageProps> { props ->
     val placement = props.tooltipPlacement ?: bottom
     val paper: RBuilder.() -> Unit = {
         mPaper(elevation = props.elevation ?: 0) {
             css {
-                backgroundImage = Image("url(${props.imageSrc})")
+                backgroundImage = Image.path(props.imageSrc)
                 backgroundPosition = "center center"
                 backgroundSize = "cover"
             }

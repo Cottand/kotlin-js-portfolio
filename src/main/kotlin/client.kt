@@ -17,6 +17,7 @@ private val module = js("module")
 object Settings {
     const val blogEnabled = false
     const val useFooter = false
+    const val useHeaderPic = false
 }
 
 fun main() {
