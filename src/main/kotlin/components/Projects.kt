@@ -33,12 +33,13 @@ import kotlinx.css.fontSize
 import kotlinx.css.paddingRight
 import kotlinx.css.pct
 import kotlinx.css.verticalAlign
-import kotlinx.css.vw
 import kotlinx.css.width
 import kotlinx.html.DIV
+import org.w3c.dom.events.EventListener
 import react.RBuilder
 import react.RProps
 import react.dom.br
+import react.useEffectWithCleanup
 import react.useState
 import styled.StyleSheet
 import styled.StyledDOMBuilder
@@ -60,18 +61,20 @@ val projects by component<RProps> {
     ) =
         mAccordion(expanded = expandedPanel == this, onChange = handleChange(this)) {
             mAccordionSummary(expandIcon = icon("expand_more")) {
-//                var alignedText by useState(false)
-                val alignedText = window.innerWidth > 550
-                +"${window.innerWidth}"
+                var aligned by useState(false)
+                val updater = EventListener { aligned = window.innerWidth > 600 }
+                useEffectWithCleanup(emptyList()) {
+                    window.addEventListener("resize", updater);
+                    { window.removeEventListener("resize", updater) }
+                }
                 fun RBuilder.texts() {
                     mTypography(name) { css(Styles.heading) }
                     mTypography(summary) { css(Styles.subHeading) }
                 }
-                if (alignedText) styledDiv {
+                if (aligned) texts() else styledDiv {
                     css.verticalAlign = Companion.middle
                     texts()
                 }
-                else texts()
             }
             mAccordionDetails {
                 styledDiv {
@@ -123,7 +126,7 @@ private object Styles : StyleSheet("ProjectStyles") {
     }
     val heading by css {
         paddingRight = 2.spacingUnits
-        fontSize = min(4.vw, 3.spacingUnits)
+        fontSize = 3.spacingUnits
         flexBasis = 33.33.pct.basis
         flexShrink = 0.0
     }
