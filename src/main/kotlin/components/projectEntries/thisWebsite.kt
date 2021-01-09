@@ -33,8 +33,8 @@ fun RBuilder.thisWebsiteEntry() {
     }
     markdown {
         +"""|Overall, I would say it is a pleasure to be able to use extension functions and the Kotlin stdlib
-            |to write frontend code, but those benefits do not make up for the lack of maturity of the Kotlin web
-            |ecosystem, and for how painful it is to wrap Typescript libraries. The design of TS APIs is very
+            |to write frontend code, but those benefits do not make up for the lack of Kotlin web libraries,
+            |and for how painful it is to wrap Typescript ones. The design of TS APIs is very
             |different from Kotlin's, and things become even trickier when one brings React into the picture.
             |
             |
