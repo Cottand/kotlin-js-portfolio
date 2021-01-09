@@ -61,7 +61,7 @@ val projects by component<RProps> {
     ) =
         mAccordion(expanded = expandedPanel == this, onChange = handleChange(this)) {
             mAccordionSummary(expandIcon = icon("expand_more")) {
-                var aligned by useState(false)
+                var aligned by useState(window.innerWidth > 600)
                 val updater = EventListener { aligned = window.innerWidth > 600 }
                 useEffectWithCleanup(emptyList()) {
                     window.addEventListener("resize", updater);
