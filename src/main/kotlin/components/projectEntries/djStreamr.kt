@@ -1,7 +1,6 @@
 package components.projectEntries
 
 import com.ccfraser.muirwik.components.spacingUnits
-import components.imgWithCaption
 import external.markdown
 import kotlinx.css.LinearDimension
 import kotlinx.css.height
@@ -12,6 +11,7 @@ import react.RBuilder
 import react.dom.a
 import react.dom.br
 import react.dom.div
+import style.BaseStyle
 import styled.css
 import styled.styledImg
 
@@ -34,9 +34,17 @@ fun RBuilder.djStreamrEntry() {
             |the backend is fully written in **Kotlin/JVM** and is distributed between **AWS Lambda** 
             |functions and a server.""".trimMargin()
     }
-    imgWithCaption("/djstreamrScreenshot.png", "DJStreamr's online interface") {
-        width = min(90.pct, 920.px)
+    br {}
+    styledImg(src = Files.djstreamrLancelot) {
+        css {
+            with(BaseStyle) {
+                +borderRadius
+                +centered
+            }
+            width = min(75.pct, 600.px)
+        }
     }
+    br {}
     markdown {
         +"""|DJStreamr abstracts away latency between to simultaneous performers by using the 
             |metadata from audio files and the commands DJs emit to a central server. This allows for a
