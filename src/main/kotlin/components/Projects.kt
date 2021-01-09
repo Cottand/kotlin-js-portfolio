@@ -7,12 +7,14 @@ import com.ccfraser.muirwik.components.mIcon
 import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
 import components.Panel.DJStreamr
+import components.Panel.ICHack19
 import components.Panel.Ivann
 import components.Panel.KEEP213
 import components.Panel.Pintos
 import components.Panel.ThisWebsite
 import components.Panel.WACC
 import components.projectEntries.djStreamrEntry
+import components.projectEntries.icHackEntry
 import components.projectEntries.ivannEntry
 import components.projectEntries.keep213Entry
 import components.projectEntries.pintosEntry
@@ -82,7 +84,6 @@ val projects by component<RProps> {
                         githubBanner(gh)
                         br {}
                     }
-                    css.width = 100.pct
                     details()
                 }
             }
@@ -98,11 +99,12 @@ val projects by component<RProps> {
             thisWebsiteEntry()
         }
         KEEP213.entry(
-            "A pattern matching proposal for the Kotlin language",
+            "Pattern matching proposal for the Kotlin language",
             "cottand/KEEP/blob/pattern-matching/proposals/pattern-matching.md"
         ) {
             keep213Entry()
         }
+        ICHack19.entry("Hackathon project on AR-assisted teaching", "cottand/ICHack19") { icHackEntry() }
     }
 }
 
@@ -114,6 +116,7 @@ enum class Panel {
     Pintos,
     ThisWebsite,
     KEEP213,
+    ICHack19,
     Checkm8,
     ;
 }

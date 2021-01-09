@@ -8,7 +8,7 @@ fun RBuilder.waccEntry() {
     markdown {
 //    language=Markdown
         +"""|**WACC** is a toy language. We made a multiplatform compiler for it (in **Kotlin**) capable
-        | of producing both ARM assembly and JVM bytecode.
+        | of producing both **ARM11** assembly and **JVM** bytecode.
         | We put a lot of effort into achieving feature parity
         | between the two. For example, the JVM has no native way of determining an overflow in the
         | primitive `int` type.
@@ -35,6 +35,14 @@ fun RBuilder.waccEntry() {
         +"\n\nThis one prints a triangle to the console:"
     }
     highlightCode("java") { +triangleProgram }
+
+    markdown {
+        +"""Engineering a compiler from scratch was a very interesting exercise - it concerns many areas
+            |of Computer Science, from parsing to code generation and optimisation. I learned a great deal about
+            |the JVM in particular, and that now helps me when writing Kotlin or Java, which is the stack with
+            |which I work the most.
+        """.trimMargin()
+    }
 }
 
 private val triangleProgram =

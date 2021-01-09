@@ -18,7 +18,7 @@ fun RBuilder.ivannEntry() {
             |graph where the layers (or simply components) of the model are nodes which can be connected.
             |
             |This graph can then be used to perform static analysis to catch mistakes and provide
-            |early feedback to the user (much like an IDE would!)
+            |early feedback to the user (much like an IDE would!).
             |""".trimMargin()
     }
     br {}
@@ -30,7 +30,13 @@ fun RBuilder.ivannEntry() {
         +"""|In order to cater to all niches, Ivann supports _custom nodes_, which means the user can make
             |a node out of inline python. This allows using the UI to quickly access the most common bits
             |of the network, while being able to fine-tune other parts of the graph.
+            |
+            |We developed Ivann as a team of 7. My focus was on the logic concerned with the IR, the static
+            |analysis, and making code generation of Python code with Javascript objects a type-safe development
+            |experience. In a way, Ivann reminded me a lot of engineering the compiler for WACC.
+            |
+            |Even then, Ivann was my first purely frontend project, and I got to learn about how difficult it is,
+            |and how its challenges are very different from the ones I encounter when doing backend development.
         """.trimMargin()
     }
-    br {}
 }

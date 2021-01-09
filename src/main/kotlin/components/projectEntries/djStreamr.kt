@@ -41,7 +41,7 @@ fun RBuilder.djStreamrEntry() {
                 +borderRadius
                 +centered
             }
-            width = min(75.pct, 600.px)
+            width = min(75.pct, 500.px)
         }
     }
     br {}
@@ -50,6 +50,9 @@ fun RBuilder.djStreamrEntry() {
             |metadata from audio files and the commands DJs emit to a central server. This allows for a
             |seamless experience for the audience. We hook the performance to popular streaming
             |platforms like Twitch or YouTube for ease of use.
+            |
+            |I build DJStreamr along with Kacper Kazaniecki, Landelot Blanchard and William Profit. My focus
+            |is on the scalability of the service and the development of the cloud infrastructure in general.
             |""".trimMargin()
     }
 }

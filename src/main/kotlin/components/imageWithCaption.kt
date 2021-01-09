@@ -26,6 +26,7 @@ fun RBuilder.imgWithCaption(src: String, caption: String, centered: Boolean = tr
         styledImg(src = src, alt = caption) {
             css {
                 if (centered) +BaseStyle.centered
+                +BaseStyle.borderRadius
                 paddingTop = 2.spacingUnits
                 paddingBottom = 1.spacingUnits
                 css()
