@@ -1,9 +1,10 @@
 package style
 
 import com.ccfraser.muirwik.components.styles.ThemeOptions
+import com.ccfraser.muirwik.components.styles.createMuiTheme
 import kotlinext.js.js
 
-val themeOptions1 = js(
+val globalTheme = js(
     """(
 {
   "breakpoints": {
@@ -283,4 +284,4 @@ val themeOptions1 = js(
 )"""
 ).unsafeCast<ThemeOptions>().apply {
     palette.asDynamic().background.default = "#121212"
-}
+}.let { createMuiTheme(it) }

@@ -1,6 +1,5 @@
 package components
 
-import com.ccfraser.muirwik.components.MTypographyVariant.h3
 import com.ccfraser.muirwik.components.accordion.mAccordion
 import com.ccfraser.muirwik.components.accordion.mAccordionDetails
 import com.ccfraser.muirwik.components.accordion.mAccordionSummary
@@ -9,16 +8,21 @@ import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
 import components.Panel.DJStreamr
 import components.Panel.Ivann
+import components.Panel.KEEP213
 import components.Panel.Pintos
+import components.Panel.ThisWebsite
 import components.Panel.WACC
 import components.projectEntries.djStreamrEntry
 import components.projectEntries.ivannEntry
+import components.projectEntries.keep213Entry
 import components.projectEntries.pintosEntry
+import components.projectEntries.thisWebsiteEntry
 import components.projectEntries.waccEntry
+import kotlinx.browser.window
 import kotlinx.css.Align.center
 import kotlinx.css.Color.Companion.darkGray
 import kotlinx.css.Display.flex
-import kotlinx.css.FontWeight.Companion.lighter
+import kotlinx.css.VerticalAlign.Companion
 import kotlinx.css.alignItems
 import kotlinx.css.basis
 import kotlinx.css.color
@@ -26,9 +30,10 @@ import kotlinx.css.display
 import kotlinx.css.flexBasis
 import kotlinx.css.flexShrink
 import kotlinx.css.fontSize
-import kotlinx.css.fontWeight
 import kotlinx.css.paddingRight
 import kotlinx.css.pct
+import kotlinx.css.verticalAlign
+import kotlinx.css.vw
 import kotlinx.css.width
 import kotlinx.html.DIV
 import react.RBuilder
@@ -47,13 +52,26 @@ val projects by component<RProps> {
         expandedPanel = if (isExpanded) panel else null
     }
 
-    fun Panel.entry(summary: String, gh: String? = null, details: StyledDOMBuilder<DIV>.() -> Unit) =
+    fun Panel.entry(
+        summary: String,
+        gh: String? = null,
+        name: String = this.name,
+        details: StyledDOMBuilder<DIV>.() -> Unit
+    ) =
         mAccordion(expanded = expandedPanel == this, onChange = handleChange(this)) {
             mAccordionSummary(expandIcon = icon("expand_more")) {
-                mTypography(name, variant = h3) { css(Styles.heading) }
-                mTypography(summary) {
-                    css(Styles.subHeading)
+//                var alignedText by useState(false)
+                val alignedText = window.innerWidth > 550
+                +"${window.innerWidth}"
+                fun RBuilder.texts() {
+                    mTypography(name) { css(Styles.heading) }
+                    mTypography(summary) { css(Styles.subHeading) }
                 }
+                if (alignedText) styledDiv {
+                    css.verticalAlign = Companion.middle
+                    texts()
+                }
+                else texts()
             }
             mAccordionDetails {
                 styledDiv {
@@ -73,6 +91,15 @@ val projects by component<RProps> {
         Ivann.entry("Web visual neural network builder", "icivann/ivann") { ivannEntry() }
         WACC.entry("Multiplatform compiler of a small language for ARM and the JVM", "cottand/wacc") { waccEntry() }
         Pintos.entry("UNIX-like pint-sized OS", "cottand/pintos") { pintosEntry() }
+        ThisWebsite.entry("Made with Kotlin/JS + React", "cottand/kotlin-js-portfolio", "This website") {
+            thisWebsiteEntry()
+        }
+        KEEP213.entry(
+            "A pattern matching proposal for the Kotlin language",
+            "cottand/KEEP/blob/pattern-matching/proposals/pattern-matching.md"
+        ) {
+            keep213Entry()
+        }
     }
 }
 
@@ -82,6 +109,7 @@ enum class Panel {
     Ivann,
     WACC,
     Pintos,
+    ThisWebsite,
     KEEP213,
     Checkm8,
     ;
@@ -95,8 +123,7 @@ private object Styles : StyleSheet("ProjectStyles") {
     }
     val heading by css {
         paddingRight = 2.spacingUnits
-        fontSize = 4.spacingUnits
-        fontWeight = lighter
+        fontSize = min(4.vw, 3.spacingUnits)
         flexBasis = 33.33.pct.basis
         flexShrink = 0.0
     }

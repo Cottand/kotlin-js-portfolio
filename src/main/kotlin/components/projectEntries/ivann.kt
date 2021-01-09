@@ -22,7 +22,7 @@ fun RBuilder.ivannEntry() {
             |""".trimMargin()
     }
     br {}
-    imgWithCaption(Files.ivannTypeCheck, "Visual feedback of check for matching matrix dimensions") {
+    imgWithCaption(Files.ivannTypeCheck, "Visual feedback of a check for matching matrix dimensions") {
         width = LinearDimension("max(50%, 300px)")
     }
 

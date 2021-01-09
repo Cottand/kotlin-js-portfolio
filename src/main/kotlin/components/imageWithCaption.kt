@@ -21,7 +21,7 @@ fun RBuilder.imgWithCaption(src: String, caption: String, centered: Boolean = tr
     styledDiv {
         css {
             if (centered) +BaseStyle.centered
-            width = Companion.maxContent
+            width = Companion.fitContent
         }
         styledImg(src = src, alt = caption) {
             css {

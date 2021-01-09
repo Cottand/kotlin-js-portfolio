@@ -1,11 +1,13 @@
 package components.projectEntries
 
+import external.highlightCode
 import external.markdown
 import react.RBuilder
 
-fun RBuilder.waccEntry() = markdown {
+fun RBuilder.waccEntry() {
+    markdown {
 //    language=Markdown
-    +"""|**WACC** is a toy language. We made a multiplatform compiler for it (in **Kotlin**) capable
+        +"""|**WACC** is a toy language. We made a multiplatform compiler for it (in **Kotlin**) capable
         | of producing both ARM assembly and JVM bytecode.
         | We put a lot of effort into achieving feature parity
         | between the two. For example, the JVM has no native way of determining an overflow in the
@@ -21,15 +23,18 @@ fun RBuilder.waccEntry() = markdown {
         | - Some basic command line IO
         | """.trimMargin()
 //    language=Markdown
-    +"""| Additionally, because we are targeting the JVM, you could call WACC from Java, Scala,
+        +"""| Additionally, because we are targeting the JVM, you could call WACC from Java, Scala,
         | or any other JVM language.
         | 
         | Here is an example of a WACC program. It computes the nth fibonacci number:
         |
         """.trimMargin()
-    !fibProgram
-    +"\n\nThis one prints a triangle to the console:"
-    !triangleProgram
+    }
+    highlightCode("java") { +fibProgram }
+    markdown {
+        +"\n\nThis one prints a triangle to the console:"
+    }
+    highlightCode("java") { +triangleProgram }
 }
 
 private val triangleProgram =

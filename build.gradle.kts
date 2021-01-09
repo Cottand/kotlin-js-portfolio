@@ -21,7 +21,7 @@ repositories {
 dependencies {
     val reactVersion = "17.0.0"
     val kotlinStyledVersion = "5.2.0"
-    val kotlinJsVersion = "pre.134-kotlin-1.4.10"
+    val kotlinJsVersion = "pre.135-kotlin-1.4.10"
     testImplementation(kotlin("test-js"))
     implementation("org.jetbrains:kotlin-react:$reactVersion-$kotlinJsVersion")
     implementation("org.jetbrains:kotlin-react-dom:$reactVersion-$kotlinJsVersion")
@@ -33,6 +33,7 @@ dependencies {
     implementation(npm("react-swipeable-views", "^0.13.9"))
 //    implementation(npm("react", "^17.0.0"))
     implementation(npm("markdown-to-jsx", "^7.1.0"))
+    implementation(npm("react-highlight", "^0.11.1"))
     implementation(npm("chokidar", "^3.5.0"))
     implementation("com.ccfraser.muirwik:muirwik-components:0.6.2")
 }

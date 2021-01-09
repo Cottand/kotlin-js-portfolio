@@ -7,6 +7,7 @@ import kotlinx.css.display
 import kotlinx.css.marginLeft
 import kotlinx.css.marginRight
 import kotlinx.css.pct
+import kotlinx.css.px
 import styled.StyleSheet
 
 object BaseStyle : StyleSheet("ImageStyles") {
@@ -17,5 +18,9 @@ object BaseStyle : StyleSheet("ImageStyles") {
     }
     val round by css {
         borderRadius = 50.pct
+    }
+
+    val borderRadius by css {
+        borderRadius = 6.px
     }
 }

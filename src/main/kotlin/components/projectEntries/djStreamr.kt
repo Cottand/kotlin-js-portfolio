@@ -5,6 +5,8 @@ import components.imgWithCaption
 import external.markdown
 import kotlinx.css.LinearDimension
 import kotlinx.css.height
+import kotlinx.css.pct
+import kotlinx.css.px
 import kotlinx.css.width
 import react.RBuilder
 import react.dom.a
@@ -33,7 +35,7 @@ fun RBuilder.djStreamrEntry() {
             |functions and a server.""".trimMargin()
     }
     imgWithCaption("/djstreamrScreenshot.png", "DJStreamr's online interface") {
-        width = LinearDimension("min(90%, 920px)")
+        width = min(90.pct, 920.px)
     }
     markdown {
         +"""|DJStreamr abstracts away latency between to simultaneous performers by using the 

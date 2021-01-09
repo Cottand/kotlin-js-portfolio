@@ -9,16 +9,9 @@
 
 package external
 
-import com.ccfraser.muirwik.components.card.mCard
 import com.ccfraser.muirwik.components.child
-import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.mLink
 import com.ccfraser.muirwik.components.mTypography
-import com.ccfraser.muirwik.components.setStyledPropsAndRunHandler
-import com.ccfraser.muirwik.components.spacingUnits
-import kotlinx.css.Color
-import kotlinx.css.backgroundColor
-import kotlinx.css.padding
 import react.RBuilder
 import react.RComponent
 import react.RState
@@ -43,7 +36,6 @@ fun RBuilder.markdown(str: String) = mTypography(component = "div") { child(MdTo
 interface MdBuilder {
     operator fun String.unaryPlus()
     operator fun String.get(href: String)
-    operator fun String.not()
 }
 
 fun RBuilder.markdown(closure: MdBuilder.() -> Unit) = mTypography(component = "div", paragraph = false) {
@@ -55,19 +47,6 @@ fun RBuilder.markdown(closure: MdBuilder.() -> Unit) = mTypography(component = "
 
         override fun String.get(href: String) {
             mLink(this, href)
-        }
-
-        override fun String.not() {
-            val string = this
-            mCard {
-                css.backgroundColor = Color("#121212")
-                createStyled(MdToJsxComponent) {
-                    setStyledPropsAndRunHandler(null) {
-                        css.padding(1.spacingUnits)
-                    }
-                    +"```\n$string\n```"
-                }
-            }
         }
     }
     context.closure()
