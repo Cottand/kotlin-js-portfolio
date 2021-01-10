@@ -11,7 +11,6 @@ import kotlinx.html.id
 import kotlinx.html.role
 import react.Child
 import react.RProps
-import react.dom.div
 import styled.css
 import styled.styledDiv
 import util.component

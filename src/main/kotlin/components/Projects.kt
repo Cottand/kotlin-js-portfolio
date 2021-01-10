@@ -80,6 +80,7 @@ val projects by component<RProps> {
             }
             mAccordionDetails {
                 styledDiv {
+                    css.width = 100.pct
                     if (gh != null) {
                         githubBanner(gh)
                         br {}
