@@ -9,4 +9,5 @@ object Files {
     const val ivannLancelot = "/ivannLancelot.png"
     const val icHack = "/ichack.png"
     const val icHackWin = "/ichackWin.png"
+    const val checkm8 = "/checkm8.jpg"
 }

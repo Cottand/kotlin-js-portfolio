@@ -25,7 +25,7 @@ fun RBuilder.thisWebsiteEntry() {
     ul {
         for ((text, link, desc) in libs) li {
             markdown {
-                text[link]
+                +text[link]
                 if (desc != null)
                     +" - $desc"
             }

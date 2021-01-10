@@ -11,7 +11,7 @@ fun RBuilder.keep213Entry() {
             |its `when {}` clauses, smart casts, and destructuring. The proposal takes that a step beyond and
             |introduces nested patterns and guards.""".trimMargin()
 
-        +"If you would like to see it happen, make sure you drop a hands up at ".trimMargin()
+        +"If you would like to see it happen, make sure you drop a thumbs up at ".trimMargin()
         +"the PR"["https://github.com/Kotlin/KEEP/pull/213"]
         +"!"
     }

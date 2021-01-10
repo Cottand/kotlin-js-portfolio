@@ -6,6 +6,7 @@ import com.ccfraser.muirwik.components.accordion.mAccordionSummary
 import com.ccfraser.muirwik.components.mIcon
 import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
+import components.Panel.Checkm8
 import components.Panel.DJStreamr
 import components.Panel.ICHack19
 import components.Panel.Ivann
@@ -13,6 +14,7 @@ import components.Panel.KEEP213
 import components.Panel.Pintos
 import components.Panel.ThisWebsite
 import components.Panel.WACC
+import components.projectEntries.checkm8Entry
 import components.projectEntries.djStreamrEntry
 import components.projectEntries.icHackEntry
 import components.projectEntries.ivannEntry
@@ -106,6 +108,9 @@ val projects by component<RProps> {
             keep213Entry()
         }
         ICHack19.entry("Hackathon project on AR-assisted teaching", "cottand/ICHack19") { icHackEntry() }
+        Checkm8.entry("Chess player through computer vision and smart contracts", "cottand/checkm8-public") {
+            checkm8Entry()
+        }
     }
 }
 
