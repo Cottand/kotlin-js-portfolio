@@ -9,9 +9,14 @@ fun RBuilder.keep213Entry() {
         +"""|KEEP 213 hopes to bring pattern matching to Kotlin, which _almost_ already supports it through a
             |combination of
             |its `when {}` clauses, smart casts, and destructuring. The proposal takes that a step beyond and
-            |introduces nested patterns and guards.
-            |
-            |Overall, the 'flavour' of pattern matching the KEEP suggests is similar to Haskell's (with chained patters
+            |introduces nested patterns and guards.""".trimMargin()
+
+        +"If you would like to see it happen, make sure you drop a hands up at ".trimMargin()
+        +"the PR"["https://github.com/Kotlin/KEEP/pull/213"]
+        +"!"
+    }
+    markdown {
+        +"""|Overall, the 'flavour' of pattern matching the KEEP suggests is similar to Haskell's (with chained patters
             |and potentially several guards in each pattern) but with the absence of as-patters and enforcing
             |exhaustive matches.
             |

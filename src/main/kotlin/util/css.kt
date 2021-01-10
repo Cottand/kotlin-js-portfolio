@@ -28,3 +28,4 @@ fun RBuilder.withTheme(block: Theme.() -> Unit) {
 }
 
 operator fun Spacing.times(i: Int) = invoke(i).px
+operator fun Int.times(spacing: Spacing) = spacing.invoke(this).px

@@ -69,7 +69,7 @@ val projects by component<RProps> {
                     window.addEventListener("resize", updater);
                     { window.removeEventListener("resize", updater) }
                 }
-                fun RBuilder.texts() {
+                val texts = {
                     mTypography(name) { css(Styles.heading) }
                     mTypography(summary) { css(Styles.subHeading) }
                 }

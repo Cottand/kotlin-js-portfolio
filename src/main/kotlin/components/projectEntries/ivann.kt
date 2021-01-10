@@ -1,17 +1,22 @@
 package components.projectEntries
 
+import Files
 import components.imgWithCaption
 import external.markdown
-import kotlinx.css.LinearDimension
-import kotlinx.css.br
+import kotlinx.css.pct
+import kotlinx.css.px
 import kotlinx.css.width
 import react.RBuilder
 import react.dom.br
 
 fun RBuilder.ivannEntry() {
     markdown {
-        "Ivann"["https://icivann.github.io/ivann"]
+        +"Ivann"["https://icivann.github.io/ivann"]
         +" is an online visual network builder, written using **Typescript** and **VueJS**. It generates Python files that can then be run anywhere in order to train and evaluate models."
+    }
+
+    imgWithCaption(Files.ivannLancelot) { width = min(100.pct, 400.px) }
+    markdown {
         +"""|It is aimed at Machine Learning researchers,
             |it looks to abstract away the coding aspect of coming up with a neural network model so
             |the scientist can focus on the design. In order to achieve this, the network is represented as a 
@@ -22,8 +27,9 @@ fun RBuilder.ivannEntry() {
             |""".trimMargin()
     }
     br {}
+
     imgWithCaption(Files.ivannTypeCheck, "Visual feedback of a check for matching matrix dimensions") {
-        width = LinearDimension("max(50%, 300px)")
+        width = min(100.pct, 300.px)
     }
 
     markdown {

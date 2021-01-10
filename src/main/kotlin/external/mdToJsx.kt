@@ -35,8 +35,11 @@ val MdToJsxComponent: RComponent<StyledProps, RState> = mdToJsxModule.default
 fun RBuilder.markdown(str: String) = mTypography(component = "div") { child(MdToJsxComponent) { +str } }
 interface MdBuilder {
     operator fun String.unaryPlus()
-    operator fun String.get(href: String)
+    operator fun String.get(href: String) = Assignment(this, href)
+    operator fun Assignment.unaryPlus()
 }
+
+data class Assignment(val label: String, val href: String)
 
 fun RBuilder.markdown(closure: MdBuilder.() -> Unit) = mTypography(component = "div", paragraph = false) {
     val context = object : MdBuilder {
@@ -45,8 +48,8 @@ fun RBuilder.markdown(closure: MdBuilder.() -> Unit) = mTypography(component = "
             child(MdToJsxComponent) { +string }
         }
 
-        override fun String.get(href: String) {
-            mLink(this, href)
+        override fun Assignment.unaryPlus() {
+            mLink(label, href)
         }
     }
     context.closure()

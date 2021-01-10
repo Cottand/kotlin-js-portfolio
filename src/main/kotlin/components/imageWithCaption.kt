@@ -13,33 +13,40 @@ import kotlinx.css.paddingTop
 import kotlinx.css.width
 import react.RBuilder
 import style.BaseStyle
+import style.globalTheme
 import styled.css
 import styled.styledDiv
 import styled.styledImg
+import util.times
 
-fun RBuilder.imgWithCaption(src: String, caption: String, centered: Boolean = true, css: CSSBuilder.() -> Unit = {}) {
+fun RBuilder.imgWithCaption(
+    src: String,
+    caption: String = "",
+    centered: Boolean = true,
+    imgCss: CSSBuilder.() -> Unit = {}
+) {
     styledDiv {
         css {
             if (centered) +BaseStyle.centered
             width = Companion.fitContent
+            paddingTop = 2.spacingUnits
+            paddingBottom = 1.spacingUnits
         }
         styledImg(src = src, alt = caption) {
             css {
                 if (centered) +BaseStyle.centered
                 +BaseStyle.borderRadius
-                paddingTop = 2.spacingUnits
-                paddingBottom = 1.spacingUnits
-                css()
+                imgCss()
             }
         }
-        mTypography(
+        if (caption.isNotBlank()) mTypography(
             caption,
             variant = subtitle2,
             align = MTypographyAlign.center
         ) {
             css {
                 fontStyle = FontStyle.italic
-                paddingBottom = 2.spacingUnits
+                paddingTop = globalTheme.spacing * 1
             }
         }
     }

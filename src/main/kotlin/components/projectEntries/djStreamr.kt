@@ -28,7 +28,7 @@ fun RBuilder.djStreamrEntry() {
     }
     br {}
     markdown {
-        "DJStreamr"["https://djstreamr.com"]
+        +"DJStreamr"["https://djstreamr.com"]
         +" is a collaborative platform for simultaneous, real-time DJing."
         +"""|The frontend uses **VueJS** and is written in **Kotlin/JS** and **Typescript**, while 
             |the backend is fully written in **Kotlin/JVM** and is distributed between **AWS Lambda** 
