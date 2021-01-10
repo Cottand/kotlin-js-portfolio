@@ -50,12 +50,8 @@ val navBar by component<RProps> {
                     handler()
                 }
             }
-        Routes.About {
-            child(about)
-        }
-        Routes.Projects {
-            child(projects)
-        }
+        Routes.About { child(about) }
+        Routes.Projects { child(projects) }
         Routes.Blog {
             mCard {
                 css { padding(16.px) }

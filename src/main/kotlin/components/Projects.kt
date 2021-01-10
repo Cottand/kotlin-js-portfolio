@@ -55,40 +55,40 @@ val projects by component<RProps> {
         expandedPanel = if (isExpanded) panel else null
     }
 
+    var aligned by useState(window.innerWidth > 600)
+    val updater = EventListener { aligned = window.innerWidth > 600 }
+    useEffectWithCleanup(emptyList()) {
+        window.addEventListener("resize", updater);
+        { window.removeEventListener("resize", updater) }
+    }
+
     fun Panel.entry(
         summary: String,
         gh: String? = null,
         name: String = this.name,
         details: StyledDOMBuilder<DIV>.() -> Unit
-    ) =
-        mAccordion(expanded = expandedPanel == this, onChange = handleChange(this)) {
-            mAccordionSummary(expandIcon = icon("expand_more")) {
-                var aligned by useState(window.innerWidth > 600)
-                val updater = EventListener { aligned = window.innerWidth > 600 }
-                useEffectWithCleanup(emptyList()) {
-                    window.addEventListener("resize", updater);
-                    { window.removeEventListener("resize", updater) }
-                }
-                val texts = {
-                    mTypography(name) { css(Styles.heading) }
-                    mTypography(summary) { css(Styles.subHeading) }
-                }
-                if (aligned) texts() else styledDiv {
-                    css.verticalAlign = Companion.middle
-                    texts()
-                }
+    ) = mAccordion(expanded = expandedPanel == this, onChange = handleChange(this)) {
+        mAccordionSummary(expandIcon = icon("expand_more")) {
+            fun RBuilder.texts() {
+                mTypography(name) { css(Styles.heading) }
+                mTypography(summary) { css(Styles.subHeading) }
             }
-            mAccordionDetails {
-                styledDiv {
-                    css.width = 100.pct
-                    if (gh != null) {
-                        githubBanner(gh)
-                        br {}
-                    }
-                    details()
-                }
+            if (aligned) texts() else styledDiv {
+                css.verticalAlign = Companion.middle
+                texts()
             }
         }
+        mAccordionDetails {
+            styledDiv {
+                css.width = 100.pct
+                if (gh != null) {
+                    githubBanner(gh)
+                    br {}
+                }
+                details()
+            }
+        }
+    }
 
     styledDiv {
         css(Styles.root)
