@@ -9,7 +9,7 @@ import react.RBuilder
 
 fun RBuilder.icHackEntry() {
     markdown {
-        +"""|_ICHack_ is a Hackathon celebrated every year at Imperial College. I competed in a team of 7 and we won
+        +"""|_ICHack_ is a Hackathon celebrated every year at Imperial College. I competed in a team of 6 and we won
             |the _Best Mobile App_ award.
             |Our submission, which we baptised ARnold, was an app that allowed a lecturer to bring 3D models to their
             |students' phones through AR.""".trimMargin()
