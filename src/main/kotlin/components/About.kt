@@ -22,6 +22,7 @@ import com.ccfraser.muirwik.components.mLink
 import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
 import external.githubIcon
+import external.linkedInIcon
 import kotlinx.css.height
 import kotlinx.css.padding
 import kotlinx.css.pct
@@ -68,7 +69,6 @@ val aboutHeader by component<RProps> {
             +"I enjoy building things, music, and kite surfing."
         }
         br {}
-//        mTypography("You can find me at:", variant = body1, align = center)
         contactList()
     }
 }
@@ -78,11 +78,11 @@ fun RBuilder.contactList() =
         attrs.direction = column
         mGridItem(cells8) {
             mList(component = "nav") {
-                mListItemWithIcon(
-                    "linkedin",
-                    "linkedin.com/in/ndcotta",
-                    hRefOptions = HRefOptions("https://linkedin.com/in/ndcotta"),
-                )
+                mListItem(hRefOptions = HRefOptions("https://linkedin.com/in/ndcotta"), divider = true, button = true) {
+                    attrs.component = "a"
+                    mListItemIcon { linkedInIcon() }
+                    mListItemText("linkedin.com/in/ndcotta")
+                }
                 mListItemWithIcon(
                     "email",
                     "ndcotta@blockchain.com",
