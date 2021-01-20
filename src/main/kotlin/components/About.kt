@@ -85,8 +85,8 @@ fun RBuilder.contactList() =
                 }
                 mListItemWithIcon(
                     "email",
-                    "ndcotta@blockchain.com",
-                    hRefOptions = HRefOptions("mailto:ndcotta@blockchain.com"),
+                    "nico@dcotta.eu",
+                    hRefOptions = HRefOptions("mailto:nico@dcotta.eu"),
                 )
                 mListItem(hRefOptions = HRefOptions("https://github.com/cottand"), divider = true, button = true) {
                     attrs.component = "a"
