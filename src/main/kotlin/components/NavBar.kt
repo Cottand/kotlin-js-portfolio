@@ -5,14 +5,10 @@ import com.ccfraser.muirwik.components.MAppBarColor.transparent
 import com.ccfraser.muirwik.components.MAppBarPosition.static
 import com.ccfraser.muirwik.components.MTabIndicatorColor
 import com.ccfraser.muirwik.components.MTabTextColor.primary
-import com.ccfraser.muirwik.components.card.mCard
 import com.ccfraser.muirwik.components.mAppBar
 import com.ccfraser.muirwik.components.mTab
 import com.ccfraser.muirwik.components.mTabs
-import com.ccfraser.muirwik.components.mTypography
 import kotlinx.css.boxShadow
-import kotlinx.css.padding
-import kotlinx.css.px
 import react.RBuilder
 import react.RHandler
 import react.RProps
@@ -39,7 +35,7 @@ val navBar by component<RProps> {
             linkTab("About me", Routes.About)
             linkTab("Projects", Routes.Projects)
             if (Settings.blogEnabled)
-                linkTab("Blog Posts", Routes.Blog)
+                linkTab("Blog + Talks", Routes.Blog)
         }
     }
     switch {
@@ -52,12 +48,7 @@ val navBar by component<RProps> {
             }
         Routes.About { child(about) }
         Routes.Projects { child(projects) }
-        Routes.Blog {
-            mCard {
-                css { padding(16.px) }
-                mTypography("This is some other tab")
-            }
-        }
+        Routes.Blog { child(blog) }
         redirect(to = Routes.About.path)
     }
 }

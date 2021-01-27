@@ -3,12 +3,20 @@ package components
 import Settings
 import com.ccfraser.muirwik.components.mCssBaseline
 import kotlinx.css.BackgroundAttachment.fixed
+import kotlinx.css.BackgroundRepeat.noRepeat
+import kotlinx.css.BoxSizing.borderBox
+import kotlinx.css.Display.block
 import kotlinx.css.Image
 import kotlinx.css.backgroundAttachment
 import kotlinx.css.backgroundImage
 import kotlinx.css.backgroundPosition
+import kotlinx.css.backgroundRepeat
 import kotlinx.css.backgroundSize
+import kotlinx.css.boxSizing
+import kotlinx.css.display
+import kotlinx.css.minHeight
 import kotlinx.css.padding
+import kotlinx.css.pct
 import kotlinx.css.px
 import react.RBuilder
 import react.RProps
@@ -28,9 +36,13 @@ val app = functionalComponent<RProps> {
         css {
             padding(16.px)
             backgroundImage = Image.path(Files.maco2)
-            backgroundPosition = "center center"
+            backgroundPosition = "center bottom"
             backgroundSize = "cover"
+            minHeight = min(100.pct, 600.px)
             backgroundAttachment = fixed
+            backgroundRepeat = noRepeat
+            boxSizing = borderBox
+            display = block
         }
         css(FooterStyles.root) // this will keep the footer stuck to the bottom
         child(header)

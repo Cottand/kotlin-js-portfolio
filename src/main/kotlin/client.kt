@@ -15,7 +15,7 @@ private val hot = hotModule.hot
 private val module = js("module")
 
 object Settings {
-    const val blogEnabled = false
+    const val blogEnabled = true
     const val useFooter = false
     const val useHeaderPic = false
 }
