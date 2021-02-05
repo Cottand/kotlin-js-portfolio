@@ -33,7 +33,7 @@ fun RBuilder.githubBanner(gh: String) = styledDiv {
     }
     mLink(hRefOptions = HRefOptions("https://github.com/$gh")) {
         styledDiv {
-            githubIcon() {
+            githubIcon {
                 width = svgWidth
                 height = width
                 position = absolute
