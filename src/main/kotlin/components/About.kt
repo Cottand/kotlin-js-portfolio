@@ -49,8 +49,8 @@ val aboutHeader by component<RProps> {
 
         styledImg(src = "/profileJuneCropped.jpg") {
             css {
-                width = 32.spacingUnits
-                height = 32.spacingUnits
+                width = min(42.spacingUnits, 80.pct)
+                height = width
                 padding = 4.spacingUnits.value
                 with(BaseStyle) {
                     +centered
