@@ -1,13 +1,15 @@
 package components.projectEntries
 
+import Files
 import components.imgWithCaption
 import external.markdown
 import kotlinx.css.pct
 import kotlinx.css.px
 import kotlinx.css.width
-import react.RBuilder
+import react.RProps
+import util.component
 
-fun RBuilder.icHackEntry() {
+val icHackEntry by component<RProps> {
     markdown {
         +"""|_ICHack_ is a Hackathon celebrated every year at Imperial College. I competed in a team of 6 and we won
             |the _Best Mobile App_ award.

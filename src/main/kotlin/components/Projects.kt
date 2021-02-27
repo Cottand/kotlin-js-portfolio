@@ -40,15 +40,15 @@ import kotlinx.css.paddingRight
 import kotlinx.css.pct
 import kotlinx.css.verticalAlign
 import kotlinx.css.width
-import kotlinx.html.DIV
 import org.w3c.dom.events.EventListener
+import react.FunctionalComponent
 import react.RBuilder
 import react.RProps
+import react.child
 import react.dom.br
 import react.useEffectWithCleanup
 import react.useState
 import styled.StyleSheet
-import styled.StyledDOMBuilder
 import styled.css
 import styled.styledDiv
 import util.component
@@ -69,8 +69,8 @@ val projects by component<RProps> {
     fun Panel.entry(
         summary: String,
         gh: String? = null,
+        child: FunctionalComponent<RProps>,
         name: String = this.name,
-        details: StyledDOMBuilder<DIV>.() -> Unit
     ) = mAccordion(expanded = expandedPanel == this, onChange = handleChange(this)) {
         mAccordionSummary(expandIcon = icon("expand_more")) {
             fun RBuilder.texts() {
@@ -89,31 +89,35 @@ val projects by component<RProps> {
                     githubBanner(gh)
                     br {}
                 }
-                details()
+                child(child)
             }
         }
     }
 
     styledDiv {
         css(Styles.root)
-        DJStreamr.entry("Full-stack collaborative live DJ software") { djStreamrEntry() }
-        Ivann.entry("Web visual neural network builder", "icivann/ivann") { ivannEntry() }
-        WACC.entry("Multiplatform compiler of a small language for ARM and the JVM", "cottand/wacc") { waccEntry() }
-        Paxos.entry("An implementation of the Multi-Paxos consensus algorithm", "cottand/multi-paxos") { paxosEntry() }
+        DJStreamr.entry("Full-stack collaborative live DJ software", child = djStreamrEntry)
+        Ivann.entry("Web visual neural network builder", "icivann/ivann", ivannEntry)
+        WACC.entry("Multiplatform compiler of a small language for ARM and the JVM", "cottand/wacc", waccEntry)
+        Paxos.entry("An implementation of the Multi-Paxos consensus algorithm", "cottand/multi-paxos", paxosEntry)
         KEEP213.entry(
             "Pattern matching proposal for the Kotlin language",
-            "cottand/KEEP/blob/pattern-matching/proposals/pattern-matching.md"
-        ) {
-            keep213Entry()
-        }
-        ICHack19.entry("Hackathon project on AR-assisted teaching", "cottand/ICHack19") { icHackEntry() }
-        ThisWebsite.entry("Made with Kotlin/JS + React", "cottand/kotlin-js-portfolio", "This website") {
-            thisWebsiteEntry()
-        }
-        Pintos.entry("UNIX-like pint-sized OS", "cottand/pintos") { pintosEntry() }
-        Checkm8.entry("Chess player through computer vision and smart contracts", "cottand/checkm8-public") {
-            checkm8Entry()
-        }
+            "cottand/KEEP/blob/pattern-matching/proposals/pattern-matching.md",
+            keep213Entry,
+        )
+        ICHack19.entry("Hackathon project on AR-assisted teaching", "cottand/ICHack19", icHackEntry)
+        ThisWebsite.entry(
+            "Made with Kotlin/JS + React",
+            "cottand/kotlin-js-portfolio",
+            thisWebsiteEntry,
+            "This website"
+        )
+        Pintos.entry("UNIX-like pint-sized OS", "cottand/pintos", pintosEntry)
+        Checkm8.entry(
+            "Chess player through computer vision and smart contracts",
+            "cottand/checkm8-public",
+            checkm8Entry
+        )
     }
 }
 

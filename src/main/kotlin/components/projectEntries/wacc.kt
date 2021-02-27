@@ -2,9 +2,10 @@ package components.projectEntries
 
 import external.highlightCode
 import external.markdown
-import react.RBuilder
+import react.RProps
+import util.component
 
-fun RBuilder.waccEntry() {
+val waccEntry by component<RProps> {
     markdown {
 //    language=Markdown
         +"""|**WACC** is a toy language. We made a multiplatform compiler for it (in **Kotlin**) capable

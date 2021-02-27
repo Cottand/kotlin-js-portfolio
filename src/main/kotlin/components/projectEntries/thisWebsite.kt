@@ -1,11 +1,12 @@
 package components.projectEntries
 
 import external.markdown
-import react.RBuilder
+import react.RProps
 import react.dom.li
 import react.dom.ul
+import util.component
 
-fun RBuilder.thisWebsiteEntry() {
+val thisWebsiteEntry by component<RProps> {
     markdown {
         +"""| This website is a small experiment of pure **Kotlin/JS**. It uses:
             | 

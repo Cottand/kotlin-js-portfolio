@@ -5,9 +5,10 @@ import external.markdown
 import kotlinx.css.pct
 import kotlinx.css.px
 import kotlinx.css.width
-import react.RBuilder
+import react.RProps
+import util.component
 
-fun RBuilder.checkm8Entry() {
+val checkm8Entry by component<RProps> {
     markdown {
         +"""This is our solution the Imperial College Computing dept. first year end of year project.
             | We were awarded full marks and the title _Most Interesting Extension_ for our solution.

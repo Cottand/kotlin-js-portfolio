@@ -6,10 +6,11 @@ import external.markdown
 import kotlinx.css.pct
 import kotlinx.css.px
 import kotlinx.css.width
-import react.RBuilder
+import react.RProps
+import util.component
 
 // https://github.com/Cottand/multi-paxos
-fun RBuilder.paxosEntry() {
+val paxosEntry by component<RProps> {
     markdown {
         +"Paxos"["https://paxos.systems/how/"]
         +" is a "

@@ -1,5 +1,6 @@
 package components.projectEntries
 
+import Files
 import com.ccfraser.muirwik.components.spacingUnits
 import external.markdown
 import kotlinx.css.LinearDimension
@@ -7,15 +8,16 @@ import kotlinx.css.height
 import kotlinx.css.pct
 import kotlinx.css.px
 import kotlinx.css.width
-import react.RBuilder
+import react.RProps
 import react.dom.a
 import react.dom.br
 import react.dom.div
 import style.BaseStyle
 import styled.css
 import styled.styledImg
+import util.component
 
-fun RBuilder.djStreamrEntry() {
+val djStreamrEntry by component<RProps> {
     div {
         a(href = "https://djstreamr.com") {
             styledImg(src = "/djstreamrLogoWhite.png") {
