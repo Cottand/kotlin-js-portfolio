@@ -10,4 +10,5 @@ object Files {
     const val icHack = "/ichack.png"
     const val icHackWin = "/ichackWin.png"
     const val checkm8 = "/checkm8.jpg"
+    const val multiPaxosUml = "/multiPaxosUml.png"
 }

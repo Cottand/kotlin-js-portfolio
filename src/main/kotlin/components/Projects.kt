@@ -11,6 +11,7 @@ import components.Panel.DJStreamr
 import components.Panel.ICHack19
 import components.Panel.Ivann
 import components.Panel.KEEP213
+import components.Panel.Paxos
 import components.Panel.Pintos
 import components.Panel.ThisWebsite
 import components.Panel.WACC
@@ -19,6 +20,7 @@ import components.projectEntries.djStreamrEntry
 import components.projectEntries.icHackEntry
 import components.projectEntries.ivannEntry
 import components.projectEntries.keep213Entry
+import components.projectEntries.paxosEntry
 import components.projectEntries.pintosEntry
 import components.projectEntries.thisWebsiteEntry
 import components.projectEntries.waccEntry
@@ -97,10 +99,7 @@ val projects by component<RProps> {
         DJStreamr.entry("Full-stack collaborative live DJ software") { djStreamrEntry() }
         Ivann.entry("Web visual neural network builder", "icivann/ivann") { ivannEntry() }
         WACC.entry("Multiplatform compiler of a small language for ARM and the JVM", "cottand/wacc") { waccEntry() }
-        Pintos.entry("UNIX-like pint-sized OS", "cottand/pintos") { pintosEntry() }
-        ThisWebsite.entry("Made with Kotlin/JS + React", "cottand/kotlin-js-portfolio", "This website") {
-            thisWebsiteEntry()
-        }
+        Paxos.entry("An implementation of the Multi-Paxos consensus algorithm", "cottand/multi-paxos") { paxosEntry() }
         KEEP213.entry(
             "Pattern matching proposal for the Kotlin language",
             "cottand/KEEP/blob/pattern-matching/proposals/pattern-matching.md"
@@ -108,6 +107,10 @@ val projects by component<RProps> {
             keep213Entry()
         }
         ICHack19.entry("Hackathon project on AR-assisted teaching", "cottand/ICHack19") { icHackEntry() }
+        ThisWebsite.entry("Made with Kotlin/JS + React", "cottand/kotlin-js-portfolio", "This website") {
+            thisWebsiteEntry()
+        }
+        Pintos.entry("UNIX-like pint-sized OS", "cottand/pintos") { pintosEntry() }
         Checkm8.entry("Chess player through computer vision and smart contracts", "cottand/checkm8-public") {
             checkm8Entry()
         }
@@ -124,6 +127,7 @@ enum class Panel {
     KEEP213,
     ICHack19,
     Checkm8,
+    Paxos,
     ;
 }
 
