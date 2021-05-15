@@ -9,23 +9,18 @@ import com.ccfraser.muirwik.components.mAppBar
 import com.ccfraser.muirwik.components.mTab
 import com.ccfraser.muirwik.components.mTabs
 import kotlinx.css.Color
-import kotlinx.css.Color.Companion
 import kotlinx.css.boxShadow
 import kotlinx.css.color
 import react.RBuilder
 import react.RHandler
 import react.RProps
 import react.child
-import react.dom.select
 import react.router.dom.redirect
 import react.router.dom.route
 import react.router.dom.switch
 import react.router.dom.useLocation
 import react.useState
-import style.globalTheme
-import styled.StyleSheet
 import styled.css
-import styled.getClassName
 import util.component
 
 val navBar by component<RProps> {

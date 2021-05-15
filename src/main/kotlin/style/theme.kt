@@ -4,7 +4,6 @@ import com.ccfraser.muirwik.components.styles.ThemeOptions
 import com.ccfraser.muirwik.components.styles.createMuiTheme
 import kotlinext.js.js
 
-
 val darkTheme = js(
     """(
 {
@@ -325,4 +324,3 @@ private val lightTheme by lazy {
 val globalTheme = lightTheme.unsafeCast<ThemeOptions>().apply {
     palette.asDynamic().background.default = "#121212"
 }.let { createMuiTheme(lightTheme) }
-

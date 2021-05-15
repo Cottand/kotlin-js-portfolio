@@ -28,7 +28,6 @@ import kotlinx.browser.window
 import kotlinx.css.Align.center
 import kotlinx.css.Color
 import kotlinx.css.Color.Companion.darkGray
-import kotlinx.css.Color.Companion.lightGray
 import kotlinx.css.Display.flex
 import kotlinx.css.VerticalAlign.Companion
 import kotlinx.css.alignItems

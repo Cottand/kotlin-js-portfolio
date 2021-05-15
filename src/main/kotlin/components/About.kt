@@ -21,25 +21,21 @@ import com.ccfraser.muirwik.components.mGridContainer
 import com.ccfraser.muirwik.components.mGridItem
 import com.ccfraser.muirwik.components.mLink
 import com.ccfraser.muirwik.components.mTypography
-import com.ccfraser.muirwik.components.spacingUnits
 import external.githubIcon
 import external.linkedInIcon
 import kotlinx.css.Color
-import kotlinx.css.Color.Companion
 import kotlinx.css.color
-import kotlinx.css.height
-import kotlinx.css.padding
+import kotlinx.css.paddingTop
 import kotlinx.css.pct
+import kotlinx.css.px
+import kotlinx.css.top
 import kotlinx.css.width
 import react.RBuilder
 import react.RProps
 import react.child
 import react.dom.br
-import style.BaseStyle
-import styled.StyleSheet
 import styled.css
 import styled.styledDiv
-import styled.styledImg
 import util.component
 
 val about by component<RProps> {
@@ -52,20 +48,14 @@ val about by component<RProps> {
 val aboutHeader by component<RProps> {
     mContainer {
 
-        styledImg(src = "/profileJuneCropped.jpg") {
-            css {
-                width = min(42.spacingUnits, 80.pct)
-                height = width
-                padding = 4.spacingUnits.value
-                with(BaseStyle) {
-                    +centered
-                    +round
-                }
-            }
+        css {
+            color = Color.white
+            top = 50.pct
+            paddingTop = 60.px
         }
-        css(styleSheet.whiteText)
 
         mTypography("Hi", variant = h5, align = center, color = inherit)
+        br {}
         mTypography(variant = subtitle1, align = center, paragraph = true) {
             +"I am an eager learner at "
             mLink("Imperial College", hRef = "https://www.imperial.ac.uk/computing")
@@ -109,9 +99,3 @@ fun RBuilder.contactList() =
             }
         }
     }
-
-private val styleSheet = object : StyleSheet("AboutStyle") {
-    val whiteText by css {
-        color = Color.white
-    }
-}
