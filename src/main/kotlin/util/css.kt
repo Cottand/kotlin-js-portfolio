@@ -13,9 +13,6 @@ import react.RProps
 import react.functionalComponent
 import kotlin.properties.ReadOnlyProperty
 
-fun RBuilder.simpleLink(text: String, href: String) =
-    mLink(text, hRefOptions = HRefOptions(href))
-
 fun Image.Companion.path(str: String) = Image("url($str)")
 
 fun <P : RProps> component(builder: RBuilder.(P) -> Unit) =
