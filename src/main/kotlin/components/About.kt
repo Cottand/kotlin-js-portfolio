@@ -7,6 +7,7 @@ import com.ccfraser.muirwik.components.MGridJustify
 import com.ccfraser.muirwik.components.MGridSize.cells8
 import com.ccfraser.muirwik.components.MGridSpacing.spacing0
 import com.ccfraser.muirwik.components.MTypographyAlign.center
+import com.ccfraser.muirwik.components.MTypographyColor.inherit
 import com.ccfraser.muirwik.components.MTypographyVariant.h5
 import com.ccfraser.muirwik.components.MTypographyVariant.subtitle1
 import com.ccfraser.muirwik.components.direction
@@ -23,6 +24,9 @@ import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
 import external.githubIcon
 import external.linkedInIcon
+import kotlinx.css.Color
+import kotlinx.css.Color.Companion
+import kotlinx.css.color
 import kotlinx.css.height
 import kotlinx.css.padding
 import kotlinx.css.pct
@@ -32,6 +36,7 @@ import react.RProps
 import react.child
 import react.dom.br
 import style.BaseStyle
+import styled.StyleSheet
 import styled.css
 import styled.styledDiv
 import styled.styledImg
@@ -58,7 +63,9 @@ val aboutHeader by component<RProps> {
                 }
             }
         }
-        mTypography("Hi", variant = h5, align = center)
+        css(styleSheet.whiteText)
+
+        mTypography("Hi", variant = h5, align = center, color = inherit)
         mTypography(variant = subtitle1, align = center, paragraph = true) {
             +"I am an eager learner at "
             mLink("Imperial College", hRef = "https://www.imperial.ac.uk/computing")
@@ -102,3 +109,9 @@ fun RBuilder.contactList() =
             }
         }
     }
+
+private val styleSheet = object : StyleSheet("AboutStyle") {
+    val whiteText by css {
+        color = Color.white
+    }
+}

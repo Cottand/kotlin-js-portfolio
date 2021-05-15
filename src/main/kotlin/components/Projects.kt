@@ -26,7 +26,9 @@ import components.projectEntries.thisWebsiteEntry
 import components.projectEntries.waccEntry
 import kotlinx.browser.window
 import kotlinx.css.Align.center
+import kotlinx.css.Color
 import kotlinx.css.Color.Companion.darkGray
+import kotlinx.css.Color.Companion.lightGray
 import kotlinx.css.Display.flex
 import kotlinx.css.VerticalAlign.Companion
 import kotlinx.css.alignItems
@@ -48,6 +50,7 @@ import react.child
 import react.dom.br
 import react.useEffectWithCleanup
 import react.useState
+import style.globalTheme
 import styled.StyleSheet
 import styled.css
 import styled.styledDiv
@@ -149,6 +152,7 @@ private object Styles : StyleSheet("ProjectStyles") {
     }
     val subHeading by css {
         color = darkGray
+        color = Color(globalTheme.palette.grey.A700)
         display = flex
         alignItems = center
     }

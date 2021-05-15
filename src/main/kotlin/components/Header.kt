@@ -5,7 +5,9 @@ import com.ccfraser.muirwik.components.MTypographyVariant.h2
 import com.ccfraser.muirwik.components.TooltipPlacement
 import com.ccfraser.muirwik.components.TooltipPlacement.leftEnd
 import com.ccfraser.muirwik.components.mTypography
+import kotlinx.css.Color
 import kotlinx.css.FontWeight
+import kotlinx.css.color
 import kotlinx.css.fontFamily
 import kotlinx.css.fontWeight
 import kotlinx.css.letterSpacing
@@ -22,12 +24,13 @@ import util.component
 val header by component<RProps> {
     val typo = mTypography("Nico D'Cotta", variant = h2, addAsChild = false) {
         css {
+            color = Color.white
             letterSpacing = 1.px
             fontWeight = FontWeight.bold
             paddingTop = 6.px
             paddingLeft = 14.px
             paddingBottom = if (Settings.useHeaderPic) 64.px else 10.px
-            put("text-shadow", "1px 1px #5a5a5a")
+            put("text-shadow", "1px 1px")
             fontFamily = "'Fira Code', monospace;"
         }
     }

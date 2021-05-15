@@ -20,7 +20,7 @@ import util.component
 val djStreamrEntry by component<RProps> {
     div {
         a(href = "https://djstreamr.com") {
-            styledImg(src = "/djstreamrLogoWhite.png") {
+            styledImg(src = "/djstreamrLogoBlack.png") {
                 css {
                     height = 6.spacingUnits
                     width = LinearDimension.auto
