@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.internal.ensureParentDirsCreated
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
 
 plugins {
-    kotlin("js") version "1.5.0"
+    kotlin("js") version "1.4.31"
     id("org.jlleitschuh.gradle.ktlint") version "9.4.1"
 }
 
