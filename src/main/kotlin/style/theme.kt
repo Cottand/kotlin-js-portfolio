@@ -43,4 +43,7 @@ private val lightTheme by lazy {
 
 val globalTheme = lightTheme.unsafeCast<ThemeOptions>().apply {
     palette.asDynamic().background.default = "#121212"
-}.let { createMuiTheme(lightTheme) }
+}.let {
+    @Suppress("UnsafeCastFromDynamic")
+    createMuiTheme(lightTheme)
+}

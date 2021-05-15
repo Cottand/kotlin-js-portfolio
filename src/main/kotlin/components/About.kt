@@ -51,7 +51,7 @@ val aboutHeader by component<RProps> {
         css {
             color = Color.white
             top = 50.pct
-            paddingTop = 60.px
+            paddingTop = 50.px
         }
 
         mTypography("Hi", variant = h5, align = center, color = inherit)
