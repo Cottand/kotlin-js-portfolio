@@ -27,7 +27,6 @@ import components.projectEntries.waccEntry
 import kotlinx.browser.window
 import kotlinx.css.Align.center
 import kotlinx.css.Color
-import kotlinx.css.Color.Companion.darkGray
 import kotlinx.css.Display.flex
 import kotlinx.css.VerticalAlign.Companion
 import kotlinx.css.alignItems
@@ -150,7 +149,6 @@ private object Styles : StyleSheet("ProjectStyles") {
         flexShrink = 0.0
     }
     val subHeading by css {
-        color = darkGray
         color = Color(globalTheme.palette.grey.A700)
         display = flex
         alignItems = center

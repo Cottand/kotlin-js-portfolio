@@ -11,6 +11,8 @@ import com.ccfraser.muirwik.components.mTabs
 import kotlinx.css.Color
 import kotlinx.css.boxShadow
 import kotlinx.css.color
+import kotlinx.css.pct
+import kotlinx.css.width
 import react.RBuilder
 import react.RHandler
 import react.RProps
@@ -26,7 +28,10 @@ import util.component
 val navBar by component<RProps> {
     var indexValue by useState(initValue = Routes.from(useLocation().pathname).ordinal)
     mAppBar(position = static, color = transparent) {
-        css { boxShadow.clear() }
+        css {
+            boxShadow.clear()
+            width = 90.pct
+        }
         mTabs(value = indexValue, textColor = primary, indicatorColor = MTabIndicatorColor.primary) {
             attrs {
                 centered = true
