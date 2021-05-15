@@ -1,7 +1,5 @@
 package util
 
-import com.ccfraser.muirwik.components.HRefOptions
-import com.ccfraser.muirwik.components.mLink
 import com.ccfraser.muirwik.components.styles.Spacing
 import com.ccfraser.muirwik.components.styles.Theme
 import com.ccfraser.muirwik.components.themeContext
