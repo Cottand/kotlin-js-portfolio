@@ -13,6 +13,7 @@ import kotlinx.css.boxShadow
 import kotlinx.css.color
 import kotlinx.css.pct
 import kotlinx.css.width
+import react.Fragment
 import react.RBuilder
 import react.RHandler
 import react.RProps
@@ -21,46 +22,43 @@ import react.router.dom.redirect
 import react.router.dom.route
 import react.router.dom.switch
 import react.router.dom.useLocation
-import react.useState
 import styled.css
 import util.component
 
 val navBar by component<RProps> {
-    var indexValue by useState(initValue = Routes.from(useLocation().pathname).ordinal)
-    mAppBar(position = static, color = transparent) {
-        css {
-            boxShadow.clear()
-            width = 100.pct
-        }
-        mTabs(value = indexValue, textColor = primary, indicatorColor = MTabIndicatorColor.primary) {
-            attrs {
-                centered = true
-                onChange = { _, newValue ->
-                    indexValue = newValue as Int
-                }
+    Fragment {
+        mAppBar(position = static, color = transparent) {
+            css {
+                boxShadow.clear()
+                width = 100.pct
             }
-            linkTab("About me", Routes.About)
-            linkTab("Projects", Routes.Projects)
-            if (Settings.blogEnabled)
-                linkTab("Blog + Talks", Routes.Blog)
-        }
-    }
-    switch {
-        operator fun Routes.invoke(exact: Boolean = true, handler: RHandler<TabPanelProps>) =
-            route(path, exact) {
-                child(tabPanel) {
-                    attrs { value = indexValue; index = this@invoke.ordinal }
-                    handler()
+            mTabs(value = useLocation().pathname, textColor = primary, indicatorColor = MTabIndicatorColor.primary) {
+                attrs {
+                    centered = true
                 }
+                linkTab("About me", Routes.About)
+                linkTab("Projects", Routes.Projects)
+                if (Settings.blogEnabled)
+                    linkTab("Blog + Talks", Routes.Blog)
             }
-        Routes.About { child(about) }
-        Routes.Projects { child(projects) }
-        Routes.Blog { child(blog) }
-        redirect(to = Routes.About.path)
+        }
+        switch {
+            operator fun Routes.invoke(exact: Boolean = true, handler: RHandler<TabPanelProps>) =
+                route(path, exact) {
+                    child(tabPanel) {
+                        handler()
+                    }
+                }
+            Routes.About { child(about) }
+            Routes.Projects { child(projects) }
+            Routes.Blog { child(blog) }
+            redirect(to = Routes.About.path)
+        }
     }
 }
 
 fun RBuilder.linkTab(label: String, to: Routes) = mTab(label, to.ordinal) {
+    attrs.value = to.path
     attrs.component = "a"
     css {
         color = Color.ghostWhite

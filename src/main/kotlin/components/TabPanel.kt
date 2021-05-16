@@ -7,7 +7,6 @@ import kotlinx.css.px
 import kotlinx.css.width
 import kotlinx.html.dir
 import kotlinx.html.hidden
-import kotlinx.html.id
 import kotlinx.html.role
 import react.Child
 import react.RProps
@@ -18,26 +17,21 @@ import util.withTheme
 
 external interface TabPanelProps : RProps {
     var children: Child
-    var index: Int
-    var value: Int
 }
 
 val tabPanel by component<TabPanelProps> { props ->
     styledDiv {
-        val isHidden = props.index != props.value
         css {
             width = min(860.px, 100.pct)
             alignSelf = center
         }
         attrs {
             role = "tabpanel"
-            hidden = isHidden
-            id = "simple-tabpanel-${props.index}"
+            hidden = false
             withTheme {
                 dir = direction
             }
-            set("aria-labelledby", "simple-tab-${props.index}")
         }
-        if (isHidden.not()) +props.children
+        +props.children
     }
 }
