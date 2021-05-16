@@ -30,7 +30,7 @@ val navBar by component<RProps> {
     mAppBar(position = static, color = transparent) {
         css {
             boxShadow.clear()
-            width = 90.pct
+            width = 100.pct
         }
         mTabs(value = indexValue, textColor = primary, indicatorColor = MTabIndicatorColor.primary) {
             attrs {
