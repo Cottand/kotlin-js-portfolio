@@ -93,7 +93,7 @@ fun RBuilder.contactList() =
                 mListItemWithIcon(
                     "save_alt",
                     "download resume",
-                    hRefOptions = HRefOptions("https://docs.google.com/document/d/1p5J2Aq2By9c3VWa32TL_2vOgmgB93rt-Wdtv-MzQLoU/export?format=pdf"),
+                    hRefOptions = HRefOptions("https://docs.google.com/document/d/170tf_hfknEkJpBA4YI9W31C4tbtxuQf4Vlq8nkAYJMA/export?format=pdf"),
                     divider = false,
                 )
             }
