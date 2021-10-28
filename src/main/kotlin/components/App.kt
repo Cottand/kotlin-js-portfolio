@@ -60,7 +60,7 @@ enum class Routes(val path: String) {
     Root("/");
 
     operator fun RBuilder.invoke(exact: Boolean = true, strict: Boolean = false, render: () -> ReactElement?) =
-        route(path, exact = exact, strict=  strict, render = render)
+        route(path, exact = exact, strict = strict, render = render)
 
     companion object {
         fun from(route: String) = when (route) {
