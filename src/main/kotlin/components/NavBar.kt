@@ -44,7 +44,7 @@ val navBar by component<RProps> {
         }
         switch {
             operator fun Routes.invoke(exact: Boolean = true, handler: RHandler<TabPanelProps>) =
-                route(path, exact) {
+                route(path, exact = exact) {
                     child(tabPanel) {
                         handler()
                     }

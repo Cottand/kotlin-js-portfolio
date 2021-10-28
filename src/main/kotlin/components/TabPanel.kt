@@ -10,6 +10,7 @@ import kotlinx.html.hidden
 import kotlinx.html.role
 import react.Child
 import react.RProps
+import react.dom.attrs
 import styled.css
 import styled.styledDiv
 import util.component
