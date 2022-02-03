@@ -93,7 +93,7 @@ fun RBuilder.contactList() =
                 mListItemWithIcon(
                     "save_alt",
                     "download resume",
-                    hRefOptions = HRefOptions("https://github.com/Cottand/resume/raw/master/out/main.pdf"),
+                    hRefOptions = HRefOptions("https://github.com/Cottand/resume/raw/master/out/nicoDCottaResume.pdf"),
                     divider = false,
                 )
             }
