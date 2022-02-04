@@ -20,11 +20,11 @@ import kotlinx.css.minHeight
 import kotlinx.css.paddingTop
 import kotlinx.css.vh
 import react.RProps
+import react.functionalComponent
 import styled.StyleSheet
 import styled.css
-import util.component
 
-val footer by component<RProps> {
+val footer = functionalComponent<RProps> {
     mCssBaseline()
     mContainer {
         css {

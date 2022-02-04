@@ -11,16 +11,16 @@ import kotlinx.html.role
 import react.Child
 import react.RProps
 import react.dom.attrs
+import react.functionalComponent
 import styled.css
 import styled.styledDiv
-import util.component
 import util.withTheme
 
 external interface TabPanelProps : RProps {
     var children: Child
 }
 
-val tabPanel by component<TabPanelProps> { props ->
+val tabPanel = functionalComponent<TabPanelProps> { props ->
     styledDiv {
         css {
             width = min(860.px, 100.pct)

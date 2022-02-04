@@ -6,9 +6,9 @@ import kotlinx.css.pct
 import kotlinx.css.px
 import kotlinx.css.width
 import react.RProps
-import util.component
+import react.functionalComponent
 
-val checkm8Entry by component<RProps> {
+val checkm8Entry = functionalComponent<RProps> {
     markdown {
         +"""This is our solution the Imperial College Computing dept. first year end of year project.
             | We were awarded full marks and the title _Most Interesting Extension_ for our solution.

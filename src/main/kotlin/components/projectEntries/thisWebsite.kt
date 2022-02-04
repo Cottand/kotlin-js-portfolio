@@ -4,9 +4,9 @@ import external.markdown
 import react.RProps
 import react.dom.li
 import react.dom.ul
-import util.component
+import react.functionalComponent
 
-val thisWebsiteEntry by component<RProps> {
+val thisWebsiteEntry = functionalComponent<RProps> {
     markdown {
         +"""| This website is a small experiment of pure **Kotlin/JS**. It uses:
             | 

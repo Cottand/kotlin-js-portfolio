@@ -8,11 +8,11 @@ import kotlinx.css.backgroundImage
 import kotlinx.css.backgroundPosition
 import kotlinx.css.backgroundSize
 import react.RBuilder
+import react.functionalComponent
 import styled.css
-import util.component
 import util.path
 
-val cardWithImage by component<CardWithImageProps> { props ->
+val cardWithImage = functionalComponent<CardWithImageProps> { props ->
     val placement = props.tooltipPlacement ?: bottom
     val paper: RBuilder.() -> Unit = {
         mPaper(elevation = props.elevation ?: 0) {

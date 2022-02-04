@@ -8,9 +8,9 @@ import kotlinx.css.px
 import kotlinx.css.width
 import react.RProps
 import react.dom.br
-import util.component
+import react.functionalComponent
 
-val ivannEntry by component<RProps> {
+val ivannEntry = functionalComponent<RProps> {
     markdown {
         +"Ivann"["https://icivann.github.io/ivann"]
         +" is an online visual network builder, written using **Typescript** and **VueJS**. It generates Python files that can then be run anywhere in order to train and evaluate models."

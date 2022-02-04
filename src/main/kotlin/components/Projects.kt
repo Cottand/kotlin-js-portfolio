@@ -46,15 +46,71 @@ import react.RBuilder
 import react.RProps
 import react.child
 import react.dom.br
+import react.functionalComponent
 import react.useEffectWithCleanup
 import react.useState
 import style.globalTheme
 import styled.StyleSheet
 import styled.css
 import styled.styledDiv
-import util.component
 
-val projects by component<RProps> {
+external interface EntryProps : RProps {
+    var panel: Panel
+    var name: String
+    var summary: String
+    var gh: String?
+    var child: FunctionalComponent<RProps>
+    var handleChange: (Any, isExpanded: Boolean) -> Unit
+    var expandedPanel: Panel?
+    var aligned: Boolean?
+}
+
+val projEntry = functionalComponent<EntryProps> { props ->
+    mAccordion(expanded = props.expandedPanel == props.panel, onChange = props.handleChange) {
+        mAccordionSummary(expandIcon = icon("expand_more")) {
+            fun RBuilder.texts() {
+                mTypography(props.name) { css(Styles.heading) }
+                mTypography(props.summary) { css(Styles.subHeading) }
+            }
+            if (props.aligned == true) texts() else styledDiv {
+                css.verticalAlign = Companion.middle
+                texts()
+            }
+        }
+        mAccordionDetails {
+            styledDiv {
+                css.width = 100.pct
+                props.gh?.let {
+                    githubBanner(it)
+                    br {}
+                }
+                child(props.child)
+            }
+        }
+    }
+}
+
+fun RBuilder.entry(
+    panel: Panel,
+    summary: String,
+    aligned: Boolean,
+    gh: String? = null,
+    childc: FunctionalComponent<RProps>,
+    name: String = panel.name,
+    handleChange: (Any, Boolean) -> Unit,
+    expandedPanel: Panel?,
+) = child(projEntry) {
+    attrs.summary = summary
+    attrs.gh = gh
+    attrs.child = childc
+    attrs.name = name
+    attrs.aligned = aligned
+    attrs.expandedPanel = expandedPanel
+    attrs.handleChange = handleChange
+    attrs.panel = panel
+}
+
+val projects = functionalComponent<RProps> {
     var expandedPanel: Panel? by useState(null)
     fun handleChange(panel: Panel) = { _: Any, isExpanded: Boolean ->
         expandedPanel = if (isExpanded) panel else null
@@ -72,28 +128,7 @@ val projects by component<RProps> {
         gh: String? = null,
         child: FunctionalComponent<RProps>,
         name: String = this.name,
-    ) = mAccordion(expanded = expandedPanel == this, onChange = handleChange(this)) {
-        mAccordionSummary(expandIcon = icon("expand_more")) {
-            fun RBuilder.texts() {
-                mTypography(name) { css(Styles.heading) }
-                mTypography(summary) { css(Styles.subHeading) }
-            }
-            if (aligned) texts() else styledDiv {
-                css.verticalAlign = Companion.middle
-                texts()
-            }
-        }
-        mAccordionDetails {
-            styledDiv {
-                css.width = 100.pct
-                if (gh != null) {
-                    githubBanner(gh)
-                    br {}
-                }
-                child(child)
-            }
-        }
-    }
+    ) = this@functionalComponent.entry(this, summary, aligned, gh, child, name, handleChange(this), expandedPanel)
 
     styledDiv {
         css(Styles.root)
@@ -138,7 +173,7 @@ enum class Panel {
 
 private fun RBuilder.icon(name: String) = mIcon(name, addAsChild = false)
 
-private object Styles : StyleSheet("ProjectStyles") {
+object Styles : StyleSheet("ProjectStyles") {
     val root by css {
         width = 100.pct
     }

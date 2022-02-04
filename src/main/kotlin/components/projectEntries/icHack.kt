@@ -7,9 +7,9 @@ import kotlinx.css.pct
 import kotlinx.css.px
 import kotlinx.css.width
 import react.RProps
-import util.component
+import react.functionalComponent
 
-val icHackEntry by component<RProps> {
+val icHackEntry = functionalComponent<RProps> {
     markdown {
         +"""|_ICHack_ is a Hackathon celebrated every year at Imperial College. I competed in a team of 6 and we won
             |the _Best Mobile App_ award.

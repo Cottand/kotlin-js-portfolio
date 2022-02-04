@@ -12,12 +12,12 @@ import react.RProps
 import react.dom.a
 import react.dom.br
 import react.dom.div
+import react.functionalComponent
 import style.BaseStyle
 import styled.css
 import styled.styledImg
-import util.component
 
-val djStreamrEntry by component<RProps> {
+val djStreamrEntry = functionalComponent<RProps> {
     div {
         a(href = "https://djstreamr.com") {
             styledImg(src = "/djstreamrLogoBlack.png") {

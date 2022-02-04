@@ -18,14 +18,14 @@ import react.RBuilder
 import react.RHandler
 import react.RProps
 import react.child
+import react.functionalComponent
 import react.router.dom.redirect
 import react.router.dom.route
 import react.router.dom.switch
 import react.router.dom.useLocation
 import styled.css
-import util.component
 
-val navBar by component<RProps> {
+val navBar = functionalComponent<RProps> {
     Fragment {
         mAppBar(position = static, color = transparent) {
             css {

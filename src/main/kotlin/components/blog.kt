@@ -11,9 +11,9 @@ import components.Type.Talk
 import react.RBuilder
 import react.RProps
 import react.dom.div
-import util.component
+import react.functionalComponent
 
-val blog by component<RProps> {
+val blog = functionalComponent<RProps> {
     mCard {
         mList(component = "nav") {
             entry(Talk, "Adding Pattern Matching to Kotlin", "https://youtu.be/Blj-7SGYUnE?t=215", "01/07/20", false)

@@ -36,18 +36,18 @@ import react.RBuilder
 import react.RProps
 import react.child
 import react.dom.br
+import react.functionalComponent
 import styled.css
 import styled.styledDiv
-import util.component
 
-val about by component<RProps> {
+val about = functionalComponent<RProps> {
     styledDiv {
         css { width = 100.pct }
         child(aboutHeader)
     }
 }
 
-val aboutHeader by component<RProps> {
+val aboutHeader = functionalComponent<RProps> {
     mCard {
         css {
             color = Color.white

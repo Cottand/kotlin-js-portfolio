@@ -7,10 +7,10 @@ import kotlinx.css.pct
 import kotlinx.css.px
 import kotlinx.css.width
 import react.RProps
-import util.component
+import react.functionalComponent
 
 // https://github.com/Cottand/multi-paxos
-val paxosEntry by component<RProps> {
+val paxosEntry = functionalComponent<RProps> {
     markdown {
         +"Paxos"["https://paxos.systems/how/"]
         +" is a "

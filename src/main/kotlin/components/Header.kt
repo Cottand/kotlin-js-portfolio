@@ -18,10 +18,10 @@ import kotlinx.css.px
 import react.Child
 import react.RProps
 import react.child
+import react.functionalComponent
 import styled.css
-import util.component
 
-val header by component<RProps> {
+val header = functionalComponent<RProps> {
     val typo = mTypography("Nico D'Cotta", variant = h2, addAsChild = false) {
         css {
             color = Color.white

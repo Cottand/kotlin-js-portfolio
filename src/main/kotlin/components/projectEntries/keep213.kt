@@ -3,9 +3,9 @@ package components.projectEntries
 import external.highlightCode
 import external.markdown
 import react.RProps
-import util.component
+import react.functionalComponent
 
-val keep213Entry by component<RProps> {
+val keep213Entry = functionalComponent<RProps> {
     markdown {
         +"""|KEEP 213 hopes to bring pattern matching to Kotlin, which _almost_ already supports it through a
             |combination of
