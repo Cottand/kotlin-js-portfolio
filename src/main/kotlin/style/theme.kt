@@ -13,7 +13,9 @@ private val lightTheme by lazy {
             }
             type = "light"
             primary = js {
-                main = "#517fa5"
+
+//                main = "#517fa5" // blue ish
+                main = "#B24F31" // orange-y ish
                 light = "rgb(166, 212, 250)"
                 dark = "rgb(100, 141, 174)"
             }

@@ -35,7 +35,7 @@ val app = functionalComponent<RProps> {
     styledDiv {
         css {
             padding(16.px)
-            backgroundImage = Image.path(Files.maco2)
+            backgroundImage = Image.path(Files.background)
             backgroundPosition = "center bottom"
             backgroundSize = "cover"
             minHeight = min(100.pct, 600.px)
