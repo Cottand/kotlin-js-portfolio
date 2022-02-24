@@ -17,13 +17,13 @@ import react.functionalComponent
 val blog = functionalComponent<RProps> {
     mCard {
         mList(component = "nav") {
-            entry(Talk, "Adding Pattern Matching to Kotlin", "https://youtu.be/Blj-7SGYUnE?t=215", "01/07/20", false)
             entry(
                 type = Article,
                 title = "Detailed Case Study of Blockchain.com, a Fast-growing Cryptocurrency Company",
                 hRef = "https://github.com/Cottand/articles/raw/master/blockchainCaseStudy.pdf",
                 date = "24/02/22",
             )
+            entry(Talk, "Adding Pattern Matching to Kotlin", "https://youtu.be/Blj-7SGYUnE?t=215", "01/07/20", false)
         }
     }
 }
