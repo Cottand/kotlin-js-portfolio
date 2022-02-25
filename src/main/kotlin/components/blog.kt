@@ -21,7 +21,19 @@ val blog = functionalComponent<RProps> {
                 type = Article,
                 title = "Detailed Case Study of Blockchain.com, a Fast-growing Cryptocurrency Company",
                 hRef = "https://github.com/Cottand/articles/raw/master/blockchainCaseStudy.pdf",
+                date = "29/02/22",
+            )
+            entry(
+                type = Article,
+                title = "At Scale, is it Worth Compromising on Stability for the Sake of Throughput?",
+                hRef = "https://github.com/Cottand/articles/raw/master/stabilityVsThroughput.pdf",
                 date = "24/02/22",
+            )
+            entry(
+                type = Article,
+                title = "When Are Microservice Architectures Beneficial?",
+                hRef = "https://github.com/Cottand/articles/raw/master/whenMicroservices.pdf",
+                date = "21/02/22",
             )
             entry(Talk, "Adding Pattern Matching to Kotlin", "https://youtu.be/Blj-7SGYUnE?t=215", "01/07/20", false)
         }
