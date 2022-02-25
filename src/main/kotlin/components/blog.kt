@@ -25,7 +25,7 @@ val blog = functionalComponent<RProps> {
             )
             entry(
                 type = Article,
-                title = "At Scale, is it Worth Compromising on Stability for the Sake of Throughput?",
+                title = "At Scale, Is it Worth Compromising on Stability for the Sake of Throughput?",
                 hRef = "https://github.com/Cottand/articles/raw/master/stabilityVsThroughput.pdf",
                 date = "24/02/22",
             )
