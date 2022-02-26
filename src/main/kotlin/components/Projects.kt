@@ -1,5 +1,6 @@
 package components
 
+import com.ccfraser.muirwik.components.MIconColor
 import com.ccfraser.muirwik.components.accordion.mAccordion
 import com.ccfraser.muirwik.components.accordion.mAccordionDetails
 import com.ccfraser.muirwik.components.accordion.mAccordionSummary
@@ -67,7 +68,8 @@ external interface EntryProps : RProps {
 
 val projEntry = functionalComponent<EntryProps> { props ->
     mAccordion(expanded = props.expandedPanel == props.panel, onChange = props.handleChange) {
-        mAccordionSummary(expandIcon = icon("expand_more")) {
+        mAccordionSummary(expandIcon = mIcon("expand_more", addAsChild = false, color = MIconColor.primary)) {
+
             fun RBuilder.texts() {
                 mTypography(props.name) { css(Styles.heading) }
                 mTypography(props.summary) { css(Styles.subHeading) }
@@ -97,7 +99,7 @@ fun RBuilder.entry(
     gh: String? = null,
     childc: FunctionalComponent<RProps>,
     name: String = panel.name,
-    handleChange: (Any, Boolean) -> Unit,
+    handleChange: (event: Any, isExpanded: Boolean) -> Unit,
     expandedPanel: Panel?,
 ) = child(projEntry) {
     attrs.summary = summary
@@ -170,8 +172,6 @@ enum class Panel {
     Paxos,
     ;
 }
-
-private fun RBuilder.icon(name: String) = mIcon(name, addAsChild = false)
 
 object Styles : StyleSheet("ProjectStyles") {
     val root by css {
