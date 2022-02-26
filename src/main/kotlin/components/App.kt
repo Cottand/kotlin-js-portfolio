@@ -36,7 +36,7 @@ val app = functionalComponent<RProps> {
         css {
             padding(16.px)
             backgroundImage = Image.path(Files.background)
-            backgroundPosition = "center bottom"
+            backgroundPosition = "center center"
             backgroundSize = "cover"
             minHeight = min(100.pct, 600.px)
             backgroundAttachment = fixed
