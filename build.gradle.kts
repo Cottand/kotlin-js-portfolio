@@ -37,7 +37,7 @@ kotlin {
     js(LEGACY) {
         browser {
             commonWebpackConfig {
-                sourceMaps = true
+                sourceMaps = false
                 cssSupport.enabled = true
             }
             testTask {
@@ -46,9 +46,6 @@ kotlin {
                 }
             }
             @Suppress("EXPERIMENTAL_API_USAGE")
-            dceTask {
-//                keep("kotlin-js-portfolio.components.projects")
-            }
             binaries.executable()
         }
     }
